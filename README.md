@@ -2,6 +2,28 @@
  
 Simplistic API to log into the Skill Audit log stream. 
  
+## Usage
+
+To use the Skill Audit log create and use a `Logger` as follows:
+
+```javascript
+import {
+    createLogger,
+    Severity,
+} from "@atomist/skill-logging";
+
+const logger = createLogger({
+        correlationId: "correlationId from the incoming command or event payload",
+    },
+);
+
+// Send an audit message
+await logger.log("My audit log message");
+
+// Send a warning audit log message
+await logger.log("Some warning message", Severity.WARNING);
+``` 
+ 
 ## Contributing
 
 Contributions to this project from community members are encouraged
