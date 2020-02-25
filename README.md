@@ -1,4 +1,4 @@
-# `@atomist/skill-looging` 
+# `@atomist/skill-logging` 
  
 Simplistic API to log into the Skill Audit log stream. 
  
