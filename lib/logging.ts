@@ -48,6 +48,11 @@ export interface Logger {
  * @param context the context parameter passed into the GCF handler entry point
  */
 export function createLogger(context: { eventId: string, correlationId: string }): Logger {
+
+    if (!context || !context.eventId || !context.correlationId) {
+        throw new Error(`Provided context is missing eventId and/or correlationId: ${JSON.stringify(context)}`);
+    }
+
     const logging = new Logging();
     const log = logging.log(`skills_audit`);
 
