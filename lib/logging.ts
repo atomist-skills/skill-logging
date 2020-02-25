@@ -47,7 +47,7 @@ export interface Logger {
  * Create an instance of Logger from the current GCF context object
  * @param context the context parameter passed into the GCF handler entry point
  */
-export function createLogger(context: { eventId: string }): Logger {
+export function createLogger(context: { eventId: string, correlationId: string }): Logger {
     const logging = new Logging();
     const log = logging.log(`skills_audit`);
 
@@ -58,6 +58,7 @@ export function createLogger(context: { eventId: string }): Logger {
                 labels: {
                     ...labels,
                     execution_id: context.eventId,
+                    correlation_id: context.correlationId,
                 },
                 resource: {
                     type: "global",
