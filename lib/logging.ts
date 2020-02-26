@@ -46,8 +46,9 @@ export interface Logger {
 /**
  * Create an instance of Logger from the current GCF context object
  * @param context the context parameter passed into the GCF handler entry point
+ * @param labels additional labels to be added to the audit log
  */
-export function createLogger(context: { eventId?: string, correlationId: string }): Logger {
+export function createLogger(context: { eventId?: string, correlationId: string }, labels: Record<string, any> = {}): Logger {
 
     if (!context || !context.correlationId) {
         throw new Error(`Provided context is missing correlationId: ${JSON.stringify(context)}`);
@@ -57,11 +58,12 @@ export function createLogger(context: { eventId?: string, correlationId: string 
     const log = logging.log(`skills_audit`);
 
     return {
-        log: async (msg, severity = Severity.INFO, labels = {}) => {
+        log: async (msg, severity = Severity.INFO, labelss = {}) => {
 
             const metadata = {
                 labels: {
                     ...labels,
+                    ...labelss,
                     execution_id: context.eventId,
                     correlation_id: context.correlationId,
                 },
