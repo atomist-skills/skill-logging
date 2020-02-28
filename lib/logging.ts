@@ -48,7 +48,8 @@ export interface Logger {
  * @param context the context parameter passed into the GCF handler entry point
  * @param labels additional labels to be added to the audit log
  */
-export function createLogger(context: { eventId?: string, correlationId: string, workspaceId: string }, labels: Record<string, any> = {}): Logger {
+export function createLogger(context: { eventId?: string, correlationId: string, workspaceId: string },
+                             labels: Record<string, any> = {}): Logger {
 
     if (!context || !context.correlationId || !context.workspaceId) {
         throw new Error(`Provided context is missing correlationId and/or workspaceId: ${JSON.stringify(context)}`);
