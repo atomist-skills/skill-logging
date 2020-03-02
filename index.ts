@@ -19,4 +19,3 @@ export {
     createLogger,
     Logger,
 } from "./lib/logging";
-
