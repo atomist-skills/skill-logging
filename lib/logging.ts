@@ -50,13 +50,16 @@ export interface Logger {
  */
 export function createLogger(context: { eventId?: string, correlationId: string, workspaceId: string },
                              labels: Record<string, any> = {},
-                             name: string = "skills_audit"): Logger {
+                             name: string = "skills_audit",
+                             project?: string): Logger {
 
     if (!context || !context.correlationId || !context.workspaceId) {
         throw new Error(`Provided context is missing correlationId and/or workspaceId: ${JSON.stringify(context)}`);
     }
 
-    const logging = new Logging();
+    const logging = new Logging({
+        projectId: project,
+    });
     const log = logging.log(name);
 
     return {
