@@ -35,11 +35,11 @@ export interface Logger {
 
     /**
      * Log a certain message or object to the skill audit log
-     * @param msg simple text or complex object to log
+     * @param msg simple string or array of strings to log
      * @param severity severity of skill audit message
      * @param labels additional labels to be added to the audit log
      */
-    log(msg: string | any, severity?: Severity, labels?: Record<string, any>): Promise<void>;
+    log(msg: string | string[], severity?: Severity, labels?: Record<string, any>): Promise<void>;
 
 }
 
@@ -78,16 +78,22 @@ export function createLogger(context: { eventId?: string, correlationId: string,
                 },
             };
 
-            const entry = log.entry(metadata, msg);
+            const entries = [];
+            if (Array.isArray(msg)) {
+                entries.push(msg.map(m => log.entry(metadata, m)));
+            } else {
+                entries.push(log.entry(metadata, msg));
+            }
+
             switch (severity) {
                 case Severity.WARNING:
-                    await log.warning(entry);
+                    await log.warning(entries);
                     break;
                 case Severity.ERROR:
-                    await log.error(entry);
+                    await log.error(entries);
                     break;
                 default:
-                    await log.info(entry);
+                    await log.info(entries);
                     break;
             }
         },
