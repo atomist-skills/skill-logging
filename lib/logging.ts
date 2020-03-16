@@ -80,7 +80,7 @@ export function createLogger(context: { eventId?: string, correlationId: string,
 
             const entries = [];
             if (Array.isArray(msg)) {
-                entries.push(msg.map(m => log.entry(metadata, m)));
+                entries.push(...msg.map(m => log.entry(metadata, m)));
             } else {
                 entries.push(log.entry(metadata, msg));
             }
