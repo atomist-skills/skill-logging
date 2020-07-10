@@ -24,3 +24,5 @@
 *.txt
 /graphql.*.json
 /schema.json
+/.npm
+.eslint*
