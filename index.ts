@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-export {
-    Severity,
-    createLogger,
-    Logger,
-} from "./lib/logging";
+export { Severity, createLogger, Logger } from "./lib/logging";

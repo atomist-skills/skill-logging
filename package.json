@@ -10,39 +10,44 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atomist/skill-logging.git"
+    "url": "https://github.com/atomist-skills/skill-logging.git"
   },
   "keywords": [
     "atomist",
     "automation",
     "skill"
   ],
-  "homepage": "https://github.com/atomist/skill-logging#readme",
+  "homepage": "https://github.com/atomist-skills/skill-logging#readme",
   "bugs": {
-    "url": "https://github.com/atomist/skill-logging/issues"
+    "url": "https://github.com/atomist-skills/skill-logging/issues"
   },
   "main": "./index.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "@google-cloud/logging": "^7.2.2"
+    "@google-cloud/logging": "^8.0.1"
   },
   "devDependencies": {
-    "@google-cloud/functions-framework": "^1.4.0",
-    "@types/lodash": "^4.14.149",
-    "@types/mocha": "^7.0.1",
-    "@types/node-fetch": "^2.5.4",
+    "@google-cloud/functions-framework": "^1.6.0",
+    "@types/lodash": "^4.14.157",
+    "@types/mocha": "^7.0.2",
+    "@types/node-fetch": "^2.5.7",
     "@types/power-assert": "^1.5.3",
     "@types/yargs-parser": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "espower-typescript": "^9.0.2",
-    "mocha": "^7.0.1",
+    "mocha": "^8.0.1",
     "npm-run-all": "^4.1.5",
     "power-assert": "^1.6.1",
+    "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "supervisor": "^0.12.0",
-    "ts-node": "^8.6.2",
-    "tslint": "^6.0.0",
-    "typedoc": "^0.16.9",
-    "typescript": "^3.7.5"
+    "ts-node": "^8.10.2",
+    "typedoc": "^0.17.8",
+    "typescript": "^3.9.6"
   },
   "directories": {
     "test": "test"
@@ -63,11 +68,8 @@
     "fmt": "run-s fmt:gql",
     "fmt:gql": "prettier --write \"lib/graphql/**/*.graphql\"",
     "gql:gen": "atm-gql-gen",
-    "lint": "run-p lint:ts",
-    "lint:ts": "tslint --config tslint.json --format verbose --project .",
-    "lint:gql": "prettier --list-different \"lib/graphql/**/*.graphql\"",
-    "lint:fix": "run-p lint:ts:fix",
-    "lint:ts:fix": "npm run lint:ts -- --fix",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "npm run lint -- --fix",
     "test": "mocha --require espower-typescript/guess \"test/**/*.test.ts\"",
     "test:one": "mocha --require espower-typescript/guess \"test/**/${TEST:-*.test.ts}\"",
     "typedoc": "npm run doc"

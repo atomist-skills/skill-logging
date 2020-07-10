@@ -23,16 +23,15 @@ import { Logging } from "@google-cloud/logging";
  * be considered debug output considered for the skill author only.
  */
 export enum Severity {
-    INFO,
-    WARNING,
-    ERROR,
+    Info,
+    Warning,
+    Error,
 }
 
 /**
  * Simple logging object suitable for submitting Skill audit logs
  */
 export interface Logger {
-
     /**
      * Log a certain message or object to the skill audit log
      * @param msg simple string or array of strings to log
@@ -40,7 +39,6 @@ export interface Logger {
      * @param labels additional labels to be added to the audit log
      */
     log(msg: string | string[], severity?: Severity, labels?: Record<string, any>): Promise<void>;
-
 }
 
 /**
@@ -48,11 +46,12 @@ export interface Logger {
  * @param context the context parameter passed into the GCF handler entry point
  * @param labels additional labels to be added to the audit log
  */
-export function createLogger(context: { eventId?: string, correlationId: string, workspaceId: string },
-                             labels: Record<string, any> = {},
-                             name: string = "skills_audit",
-                             project?: string): Logger {
-
+export function createLogger(
+    context: { eventId?: string; correlationId: string; workspaceId: string },
+    labels: Record<string, any> = {},
+    name = "skills_audit",
+    project?: string,
+): Logger {
     if (!context || !context.correlationId || !context.workspaceId) {
         throw new Error(`Provided context is missing correlationId and/or workspaceId: ${JSON.stringify(context)}`);
     }
@@ -63,8 +62,7 @@ export function createLogger(context: { eventId?: string, correlationId: string,
     const log = logging.log(name);
 
     return {
-        log: async (msg, severity = Severity.INFO, labelss = {}) => {
-
+        log: async (msg, severity = Severity.Info, labelss = {}) => {
             const metadata = {
                 labels: {
                     ...labels,
@@ -86,10 +84,10 @@ export function createLogger(context: { eventId?: string, correlationId: string,
             }
 
             switch (severity) {
-                case Severity.WARNING:
+                case Severity.Warning:
                     await log.warning(entries);
                     break;
-                case Severity.ERROR:
+                case Severity.Error:
                     await log.error(entries);
                     break;
                 default:
