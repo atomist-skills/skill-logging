@@ -17,7 +17,7 @@ const logger = createLogger({
 await logger.log("My audit log message");
 
 // Send a warning audit log message
-await logger.log("Some warning message", Severity.WARNING);
+await logger.log("Some warning message", Severity.Warning);
 ```
 
 ## Contributing
@@ -99,3 +99,5 @@ Need Help? [Join our Slack workspace][slack].
 
 [atomist]: https://atomist.com/ "Atomist - How Teams Deliver Software"
 [slack]: https://join.atomist.com/ "Atomist Community Slack"
+
+
