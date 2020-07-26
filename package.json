@@ -1,6 +1,5 @@
 {
   "name": "@atomist/skill-logging",
-  "version": "0.1.0",
   "description": "Atomist Skill Logging API",
   "author": {
     "name": "Atomist",
