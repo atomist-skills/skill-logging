@@ -15,8 +15,8 @@ This page details all runtime dependencies of `@atomist/skill-logging`.
 | [BSD-3-Clause](#bsd-3-clause) | 13    |
 | [CC0-1.0](#cc0-10)            | 1     |
 | [GPL-2.0](#gpl-20)            | 1     |
-| [ISC](#isc)                   | 9     |
-| [MIT](#mit)                   | 64    |
+| [ISC](#isc)                   | 11    |
+| [MIT](#mit)                   | 65    |
 
 #### Apache-2.0
 
@@ -25,25 +25,25 @@ Apache License 2.0 - [http://www.apache.org/licenses/LICENSE-2.0](http://www.apa
 | Name                                  | Version  | Publisher          | Repository                                                                                                                       |
 | ------------------------------------- | -------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | `@google-cloud/common`                | `2.4.0`  | Google Inc.        | [https://github.com/googleapis/nodejs-common](https://github.com/googleapis/nodejs-common)                                       |
-| `@google-cloud/logging`               | `8.0.1`  | Google Inc.        | [https://github.com/googleapis/nodejs-logging](https://github.com/googleapis/nodejs-logging)                                     |
-| `@google-cloud/paginator`             | `3.0.2`  | Google Inc.        | [https://github.com/googleapis/nodejs-paginator](https://github.com/googleapis/nodejs-paginator)                                 |
+| `@google-cloud/logging`               | `8.0.3`  | Google Inc.        | [https://github.com/googleapis/nodejs-logging](https://github.com/googleapis/nodejs-logging)                                     |
+| `@google-cloud/paginator`             | `3.0.4`  | Google Inc.        | [https://github.com/googleapis/nodejs-paginator](https://github.com/googleapis/nodejs-paginator)                                 |
 | `@google-cloud/projectify`            | `1.0.4`  | Google Inc.        | [https://github.com/googleapis/nodejs-projectify](https://github.com/googleapis/nodejs-projectify)                               |
 | `@google-cloud/promisify`             | `1.0.4`  | Google Inc.        | [https://github.com/googleapis/nodejs-promisify](https://github.com/googleapis/nodejs-promisify)                                 |
-| `@google-cloud/promisify`             | `2.0.1`  | Google Inc.        | [https://github.com/googleapis/nodejs-promisify](https://github.com/googleapis/nodejs-promisify)                                 |
-| `@grpc/grpc-js`                       | `1.1.2`  | Google Inc.        | [https://github.com/grpc/grpc-node/tree/master/packages/grpc-js](https://github.com/grpc/grpc-node/tree/master/packages/grpc-js) |
-| `@grpc/proto-loader`                  | `0.5.4`  | Google Inc.        | [https://github.com/grpc/grpc-node](https://github.com/grpc/grpc-node)                                                           |
+| `@google-cloud/promisify`             | `2.0.2`  | Google Inc.        | [https://github.com/googleapis/nodejs-promisify](https://github.com/googleapis/nodejs-promisify)                                 |
+| `@grpc/grpc-js`                       | `1.1.3`  | Google Inc.        | [https://github.com/grpc/grpc-node/tree/master/packages/grpc-js](https://github.com/grpc/grpc-node/tree/master/packages/grpc-js) |
+| `@grpc/proto-loader`                  | `0.5.5`  | Google Inc.        | [https://github.com/grpc/grpc-node](https://github.com/grpc/grpc-node)                                                           |
 | `@opencensus/core`                    | `0.0.22` | Google Inc.        | [https://github.com/census-instrumentation/opencensus-node](https://github.com/census-instrumentation/opencensus-node)           |
 | `@opencensus/propagation-stackdriver` | `0.0.22` | OpenCensus Authors | [https://github.com/census-instrumentation/opencensus-node](https://github.com/census-instrumentation/opencensus-node)           |
 | `ecdsa-sig-formatter`                 | `1.0.11` | D2L Corporation    | [https://github.com/Brightspace/node-ecdsa-sig-formatter](https://github.com/Brightspace/node-ecdsa-sig-formatter)               |
 | `eventid`                             | `1.0.0`  | Google Inc.        | [https://github.com/google/eventid-js](https://github.com/google/eventid-js)                                                     |
 | `fast-text-encoding`                  | `1.0.3`  | Sam Thorogood      | [https://github.com/samthor/fast-text-encoding](https://github.com/samthor/fast-text-encoding)                                   |
 | `gaxios`                              | `2.3.4`  | Google, LLC        | [https://github.com/googleapis/gaxios](https://github.com/googleapis/gaxios)                                                     |
-| `gaxios`                              | `3.0.4`  | Google, LLC        | [https://github.com/googleapis/gaxios](https://github.com/googleapis/gaxios)                                                     |
+| `gaxios`                              | `3.1.0`  | Google, LLC        | [https://github.com/googleapis/gaxios](https://github.com/googleapis/gaxios)                                                     |
 | `gcp-metadata`                        | `3.5.0`  | Stephen Sawchuk    | [https://github.com/googleapis/gcp-metadata](https://github.com/googleapis/gcp-metadata)                                         |
-| `gcp-metadata`                        | `4.1.0`  | Stephen Sawchuk    | [https://github.com/googleapis/gcp-metadata](https://github.com/googleapis/gcp-metadata)                                         |
+| `gcp-metadata`                        | `4.1.4`  | Stephen Sawchuk    | [https://github.com/googleapis/gcp-metadata](https://github.com/googleapis/gcp-metadata)                                         |
 | `google-auth-library`                 | `5.10.1` | Google Inc.        | [https://github.com/googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs)             |
-| `google-auth-library`                 | `6.0.4`  | Google Inc.        | [https://github.com/googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs)             |
-| `google-gax`                          | `2.6.3`  | Google API Authors | [https://github.com/googleapis/gax-nodejs](https://github.com/googleapis/gax-nodejs)                                             |
+| `google-auth-library`                 | `6.0.6`  | Google Inc.        | [https://github.com/googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs)             |
+| `google-gax`                          | `2.7.0`  | Google API Authors | [https://github.com/googleapis/gax-nodejs](https://github.com/googleapis/gax-nodejs)                                             |
 | `hex2dec`                             | `1.1.2`  |                    | [https://github.com/donmccurdy/hex2dec](https://github.com/donmccurdy/hex2dec)                                                   |
 | `long`                                | `4.0.0`  | Daniel Wirtz       | [https://github.com/dcodeIO/long.js](https://github.com/dcodeIO/long.js)                                                         |
 | `teeny-request`                       | `6.0.3`  | fhinkel            | [https://github.com/googleapis/teeny-request](https://github.com/googleapis/teeny-request)                                       |
@@ -63,21 +63,21 @@ BSD 2-Clause "Simplified" License - [https://opensource.org/licenses/BSD-2-Claus
 
 BSD 3-Clause "New" or "Revised" License - [https://opensource.org/licenses/BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)
 
-| Name                         | Version | Publisher                                | Repository                                                                                                         |
-| ---------------------------- | ------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `@protobufjs/aspromise`      | `1.1.2` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `@protobufjs/base64`         | `1.1.2` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `@protobufjs/codegen`        | `2.0.4` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `@protobufjs/eventemitter`   | `1.1.0` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `@protobufjs/fetch`          | `1.1.0` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `@protobufjs/float`          | `1.0.2` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `@protobufjs/inquire`        | `1.1.0` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `@protobufjs/path`           | `1.1.2` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `@protobufjs/pool`           | `1.1.0` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `@protobufjs/utf8`           | `1.1.0` | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
-| `buffer-equal-constant-time` | `1.0.1` | GoInstant Inc., a salesforce.com company | [https://github.com/goinstant/buffer-equal-constant-time](https://github.com/goinstant/buffer-equal-constant-time) |
-| `node-forge`                 | `0.9.1` | Digital Bazaar, Inc.                     | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge)                                   |
-| `protobufjs`                 | `6.9.0` | Daniel Wirtz                             | [https://github.com/protobufjs/protobuf.js](https://github.com/protobufjs/protobuf.js)                             |
+| Name                         | Version  | Publisher                                | Repository                                                                                                         |
+| ---------------------------- | -------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `@protobufjs/aspromise`      | `1.1.2`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `@protobufjs/base64`         | `1.1.2`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `@protobufjs/codegen`        | `2.0.4`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `@protobufjs/eventemitter`   | `1.1.0`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `@protobufjs/fetch`          | `1.1.0`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `@protobufjs/float`          | `1.0.2`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `@protobufjs/inquire`        | `1.1.0`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `@protobufjs/path`           | `1.1.2`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `@protobufjs/pool`           | `1.1.0`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `@protobufjs/utf8`           | `1.1.0`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
+| `buffer-equal-constant-time` | `1.0.1`  | GoInstant Inc., a salesforce.com company | [https://github.com/goinstant/buffer-equal-constant-time](https://github.com/goinstant/buffer-equal-constant-time) |
+| `node-forge`                 | `0.9.1`  | Digital Bazaar, Inc.                     | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge)                                   |
+| `protobufjs`                 | `6.10.1` | Daniel Wirtz                             | [https://github.com/protobufjs/protobuf.js](https://github.com/protobufjs/protobuf.js)                             |
 
 #### CC0-1.0
 
@@ -104,12 +104,14 @@ ISC License - [https://www.isc.org/downloads/software-support-policy/isc-license
 | `inherits`   | `2.0.4` |                    | [https://github.com/isaacs/inherits](https://github.com/isaacs/inherits)             |
 | `log-driver` | `1.2.7` | Gregg Caines       | [https://github.com/cainus/logdriver](https://github.com/cainus/logdriver)           |
 | `lru-cache`  | `5.1.1` | Isaac Z. Schlueter | [https://github.com/isaacs/node-lru-cache](https://github.com/isaacs/node-lru-cache) |
+| `lru-cache`  | `6.0.0` | Isaac Z. Schlueter | [https://github.com/isaacs/node-lru-cache](https://github.com/isaacs/node-lru-cache) |
 | `once`       | `1.4.0` | Isaac Z. Schlueter | [https://github.com/isaacs/once](https://github.com/isaacs/once)                     |
 | `semver`     | `5.7.1` |                    | [https://github.com/npm/node-semver](https://github.com/npm/node-semver)             |
 | `semver`     | `6.3.0` |                    | [https://github.com/npm/node-semver](https://github.com/npm/node-semver)             |
 | `semver`     | `7.3.2` |                    | [https://github.com/npm/node-semver](https://github.com/npm/node-semver)             |
 | `wrappy`     | `1.0.2` | Isaac Z. Schlueter | [https://github.com/npm/wrappy](https://github.com/npm/wrappy)                       |
 | `yallist`    | `3.1.1` | Isaac Z. Schlueter | [https://github.com/isaacs/yallist](https://github.com/isaacs/yallist)               |
+| `yallist`    | `4.0.0` | Isaac Z. Schlueter | [https://github.com/isaacs/yallist](https://github.com/isaacs/yallist)               |
 
 #### MIT
 
@@ -139,7 +141,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `google-p12-pem`       | `2.0.4`    | Ryan Seys           | [https://github.com/google/google-p12-pem](https://github.com/google/google-p12-pem)                           |
 | `google-p12-pem`       | `3.0.2`    | Ryan Seys           | [https://github.com/google/google-p12-pem](https://github.com/google/google-p12-pem)                           |
 | `gtoken`               | `4.1.4`    | Google, LLC         | [https://github.com/google/node-gtoken](https://github.com/google/node-gtoken)                                 |
-| `gtoken`               | `5.0.2`    | Google, LLC         | [https://github.com/google/node-gtoken](https://github.com/google/node-gtoken)                                 |
+| `gtoken`               | `5.0.3`    | Google, LLC         | [https://github.com/google/node-gtoken](https://github.com/google/node-gtoken)                                 |
 | `http-proxy-agent`     | `4.0.1`    | Nathan Rajlich      | [https://github.com/TooTallNate/node-http-proxy-agent](https://github.com/TooTallNate/node-http-proxy-agent)   |
 | `https-proxy-agent`    | `5.0.0`    | Nathan Rajlich      | [https://github.com/TooTallNate/node-https-proxy-agent](https://github.com/TooTallNate/node-https-proxy-agent) |
 | `is-obj`               | `2.0.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/is-obj](https://github.com/sindresorhus/is-obj)                               |
@@ -148,6 +150,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `is`                   | `3.3.0`    | Enrico Marino       | [https://github.com/enricomarino/is](https://github.com/enricomarino/is)                                       |
 | `isarray`              | `1.0.0`    | Julian Gruber       | [https://github.com/juliangruber/isarray](https://github.com/juliangruber/isarray)                             |
 | `json-bigint`          | `0.3.1`    | Andrey Sidorov      | [https://github.com/sidorares/json-bigint](https://github.com/sidorares/json-bigint)                           |
+| `json-bigint`          | `1.0.0`    | Andrey Sidorov      | [https://github.com/sidorares/json-bigint](https://github.com/sidorares/json-bigint)                           |
 | `jwa`                  | `2.0.0`    | Brian J. Brennan    | [https://github.com/brianloveswords/node-jwa](https://github.com/brianloveswords/node-jwa)                     |
 | `jws`                  | `4.0.0`    | Brian J Brennan     | [https://github.com/brianloveswords/node-jws](https://github.com/brianloveswords/node-jws)                     |
 | `lodash.at`            | `4.6.0`    | John-David Dalton   | [https://github.com/lodash/lodash](https://github.com/lodash/lodash)                                           |
@@ -163,7 +166,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `pumpify`              | `2.0.1`    | Mathias Buus        | [https://github.com/mafintosh/pumpify](https://github.com/mafintosh/pumpify)                                   |
 | `readable-stream`      | `2.3.7`    |                     | [https://github.com/nodejs/readable-stream](https://github.com/nodejs/readable-stream)                         |
 | `readable-stream`      | `3.6.0`    |                     | [https://github.com/nodejs/readable-stream](https://github.com/nodejs/readable-stream)                         |
-| `retry-request`        | `4.1.1`    | Stephen Sawchuk     | [https://github.com/stephenplusplus/retry-request](https://github.com/stephenplusplus/retry-request)           |
+| `retry-request`        | `4.1.2`    | Stephen Sawchuk     | [https://github.com/stephenplusplus/retry-request](https://github.com/stephenplusplus/retry-request)           |
 | `safe-buffer`          | `5.1.2`    | Feross Aboukhadijeh | [https://github.com/feross/safe-buffer](https://github.com/feross/safe-buffer)                                 |
 | `snakecase-keys`       | `3.2.0`    | Ben Drucker         | [https://github.com/bendrucker/snakecase-keys](https://github.com/bendrucker/snakecase-keys)                   |
 | `stream-events`        | `1.0.5`    | Stephen Sawchuk     | [https://github.com/stephenplusplus/stream-events](https://github.com/stephenplusplus/stream-events)           |
@@ -179,7 +182,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `util-deprecate`       | `1.0.2`    | Nathan Rajlich      | [https://github.com/TooTallNate/util-deprecate](https://github.com/TooTallNate/util-deprecate)                 |
 | `uuid`                 | `3.4.0`    |                     | [https://github.com/uuidjs/uuid](https://github.com/uuidjs/uuid)                                               |
 | `uuid`                 | `7.0.3`    |                     | [https://github.com/uuidjs/uuid](https://github.com/uuidjs/uuid)                                               |
-| `uuid`                 | `8.2.0`    |                     | [https://github.com/uuidjs/uuid](https://github.com/uuidjs/uuid)                                               |
+| `uuid`                 | `8.3.0`    |                     | [https://github.com/uuidjs/uuid](https://github.com/uuidjs/uuid)                                               |
 | `walkdir`              | `0.4.1`    | Ryan Day            | [https://github.com/soldair/node-walkdir](https://github.com/soldair/node-walkdir)                             |
 
 ## Contact
