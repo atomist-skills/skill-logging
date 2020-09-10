@@ -179,7 +179,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `map-obj`                 | `4.1.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/map-obj](https://github.com/sindresorhus/map-obj)                                 |
 | `mime`                    | `2.4.6`    | Robert Kieffer      | [https://github.com/broofa/mime](https://github.com/broofa/mime)                                                   |
 | `ms`                      | `2.1.2`    |                     | [https://github.com/zeit/ms](https://github.com/zeit/ms)                                                           |
-| `node-fetch`              | `2.6.0`    | David Frank         | [https://github.com/bitinn/node-fetch](https://github.com/bitinn/node-fetch)                                       |
+| `node-fetch`              | `2.6.1`    | David Frank         | [https://github.com/bitinn/node-fetch](https://github.com/bitinn/node-fetch)                                       |
 | `on-finished`             | `2.3.0`    |                     | [https://github.com/jshttp/on-finished](https://github.com/jshttp/on-finished)                                     |
 | `p-limit`                 | `2.3.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/p-limit](https://github.com/sindresorhus/p-limit)                                 |
 | `p-locate`                | `4.1.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/p-locate](https://github.com/sindresorhus/p-locate)                               |
