@@ -87,5 +87,6 @@
   "lint-staged": {
     "**/*.ts": "npm run atm:lint:eslint",
     "**/*.@(graphql|json|markdown|yaml|yml|md)": "npm run atm:lint:prettier"
-  }
+  },
+  "version": "0.1.1"
 }
