@@ -12,11 +12,11 @@ This page details all runtime dependencies of `@atomist/skill-logging`.
 | ----------------------------- | ----- |
 | [Apache-2.0](#apache-20)      | 24    |
 | [BSD-2-Clause](#bsd-2-clause) | 4     |
-| [BSD-3-Clause](#bsd-3-clause) | 13    |
+| [BSD-3-Clause](#bsd-3-clause) | 14    |
 | [CC0-1.0](#cc0-10)            | 1     |
-| [GPL-2.0](#gpl-20)            | 1     |
+| [GPL-2.0](#gpl-20)            | 2     |
 | [ISC](#isc)                   | 18    |
-| [MIT](#mit)                   | 86    |
+| [MIT](#mit)                   | 85    |
 
 #### Apache-2.0
 
@@ -25,12 +25,12 @@ Apache License 2.0 - [http://www.apache.org/licenses/LICENSE-2.0](http://www.apa
 | Name                                  | Version      | Publisher          | Repository                                                                                                                       |
 | ------------------------------------- | ------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | `@google-cloud/common`                | `2.4.0`      | Google Inc.        | [https://github.com/googleapis/nodejs-common](https://github.com/googleapis/nodejs-common)                                       |
-| `@google-cloud/logging`               | `8.0.5`      | Google Inc.        | [https://github.com/googleapis/nodejs-logging](https://github.com/googleapis/nodejs-logging)                                     |
-| `@google-cloud/paginator`             | `3.0.4`      | Google Inc.        | [https://github.com/googleapis/nodejs-paginator](https://github.com/googleapis/nodejs-paginator)                                 |
+| `@google-cloud/logging`               | `8.0.6`      | Google Inc.        | [https://github.com/googleapis/nodejs-logging](https://github.com/googleapis/nodejs-logging)                                     |
+| `@google-cloud/paginator`             | `3.0.5`      | Google Inc.        | [https://github.com/googleapis/nodejs-paginator](https://github.com/googleapis/nodejs-paginator)                                 |
 | `@google-cloud/projectify`            | `1.0.4`      | Google Inc.        | [https://github.com/googleapis/nodejs-projectify](https://github.com/googleapis/nodejs-projectify)                               |
 | `@google-cloud/promisify`             | `1.0.4`      | Google Inc.        | [https://github.com/googleapis/nodejs-promisify](https://github.com/googleapis/nodejs-promisify)                                 |
-| `@google-cloud/promisify`             | `2.0.2`      | Google Inc.        | [https://github.com/googleapis/nodejs-promisify](https://github.com/googleapis/nodejs-promisify)                                 |
-| `@grpc/grpc-js`                       | `1.1.5`      | Google Inc.        | [https://github.com/grpc/grpc-node/tree/master/packages/grpc-js](https://github.com/grpc/grpc-node/tree/master/packages/grpc-js) |
+| `@google-cloud/promisify`             | `2.0.3`      | Google Inc.        | [https://github.com/googleapis/nodejs-promisify](https://github.com/googleapis/nodejs-promisify)                                 |
+| `@grpc/grpc-js`                       | `1.1.7`      | Google Inc.        | [https://github.com/grpc/grpc-node/tree/master/packages/grpc-js](https://github.com/grpc/grpc-node/tree/master/packages/grpc-js) |
 | `@grpc/proto-loader`                  | `0.5.5`      | Google Inc.        | [https://github.com/grpc/grpc-node](https://github.com/grpc/grpc-node)                                                           |
 | `@grpc/proto-loader`                  | `0.6.0-pre9` | Google Inc.        | [https://github.com/grpc/grpc-node](https://github.com/grpc/grpc-node)                                                           |
 | `@opencensus/core`                    | `0.0.22`     | Google Inc.        | [https://github.com/census-instrumentation/opencensus-node](https://github.com/census-instrumentation/opencensus-node)           |
@@ -39,12 +39,12 @@ Apache License 2.0 - [http://www.apache.org/licenses/LICENSE-2.0](http://www.apa
 | `eventid`                             | `1.0.0`      | Google Inc.        | [https://github.com/google/eventid-js](https://github.com/google/eventid-js)                                                     |
 | `fast-text-encoding`                  | `1.0.3`      | Sam Thorogood      | [https://github.com/samthor/fast-text-encoding](https://github.com/samthor/fast-text-encoding)                                   |
 | `gaxios`                              | `2.3.4`      | Google, LLC        | [https://github.com/googleapis/gaxios](https://github.com/googleapis/gaxios)                                                     |
-| `gaxios`                              | `3.1.0`      | Google, LLC        | [https://github.com/googleapis/gaxios](https://github.com/googleapis/gaxios)                                                     |
+| `gaxios`                              | `3.2.0`      | Google, LLC        | [https://github.com/googleapis/gaxios](https://github.com/googleapis/gaxios)                                                     |
 | `gcp-metadata`                        | `3.5.0`      | Stephen Sawchuk    | [https://github.com/googleapis/gcp-metadata](https://github.com/googleapis/gcp-metadata)                                         |
-| `gcp-metadata`                        | `4.1.4`      | Stephen Sawchuk    | [https://github.com/googleapis/gcp-metadata](https://github.com/googleapis/gcp-metadata)                                         |
+| `gcp-metadata`                        | `4.2.0`      | Stephen Sawchuk    | [https://github.com/googleapis/gcp-metadata](https://github.com/googleapis/gcp-metadata)                                         |
 | `google-auth-library`                 | `5.10.1`     | Google Inc.        | [https://github.com/googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs)             |
 | `google-auth-library`                 | `6.0.6`      | Google Inc.        | [https://github.com/googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs)             |
-| `google-gax`                          | `2.7.0`      | Google API Authors | [https://github.com/googleapis/gax-nodejs](https://github.com/googleapis/gax-nodejs)                                             |
+| `google-gax`                          | `2.8.0`      | Google API Authors | [https://github.com/googleapis/gax-nodejs](https://github.com/googleapis/gax-nodejs)                                             |
 | `hex2dec`                             | `1.1.2`      |                    | [https://github.com/donmccurdy/hex2dec](https://github.com/donmccurdy/hex2dec)                                                   |
 | `long`                                | `4.0.0`      | Daniel Wirtz       | [https://github.com/dcodeIO/long.js](https://github.com/dcodeIO/long.js)                                                         |
 | `teeny-request`                       | `6.0.3`      | fhinkel            | [https://github.com/googleapis/teeny-request](https://github.com/googleapis/teeny-request)                                       |
@@ -77,7 +77,8 @@ BSD 3-Clause "New" or "Revised" License - [https://opensource.org/licenses/BSD-3
 | `@protobufjs/pool`           | `1.1.0`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
 | `@protobufjs/utf8`           | `1.1.0`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
 | `buffer-equal-constant-time` | `1.0.1`  | GoInstant Inc., a salesforce.com company | [https://github.com/goinstant/buffer-equal-constant-time](https://github.com/goinstant/buffer-equal-constant-time) |
-| `node-forge`                 | `0.9.1`  | Digital Bazaar, Inc.                     | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge)                                   |
+| `node-forge`                 | `0.10.0` | Digital Bazaar, Inc.                     | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge)                                   |
+| `node-forge`                 | `0.9.2`  | Digital Bazaar, Inc.                     | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge)                                   |
 | `protobufjs`                 | `6.10.1` | Daniel Wirtz                             | [https://github.com/protobufjs/protobuf.js](https://github.com/protobufjs/protobuf.js)                             |
 
 #### CC0-1.0
@@ -92,9 +93,10 @@ Creative Commons Zero v1.0 Universal - [https://creativecommons.org/publicdomain
 
 GNU General Public License v2.0 only - [https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html](https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html)
 
-| Name         | Version | Publisher            | Repository                                                                       |
-| ------------ | ------- | -------------------- | -------------------------------------------------------------------------------- |
-| `node-forge` | `0.9.1` | Digital Bazaar, Inc. | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge) |
+| Name         | Version  | Publisher            | Repository                                                                       |
+| ------------ | -------- | -------------------- | -------------------------------------------------------------------------------- |
+| `node-forge` | `0.10.0` | Digital Bazaar, Inc. | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge) |
+| `node-forge` | `0.9.2`  | Digital Bazaar, Inc. | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge) |
 
 #### ISC
 
@@ -130,7 +132,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `@tootallnate/once`       | `1.1.2`    | Nathan Rajlich      | [https://github.com/TooTallNate/once](https://github.com/TooTallNate/once)                                         |
 | `@types/color-name`       | `1.1.1`    |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/long`             | `4.0.1`    |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
-| `@types/node`             | `12.12.54` |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
+| `@types/node`             | `12.12.62` |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/node`             | `13.13.13` |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `abort-controller`        | `3.0.0`    | Toru Nagashima      | [https://github.com/mysticatea/abort-controller](https://github.com/mysticatea/abort-controller)                   |
 | `agent-base`              | `6.0.1`    | Nathan Rajlich      | [https://github.com/TooTallNate/node-agent-base](https://github.com/TooTallNate/node-agent-base)                   |
@@ -146,7 +148,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `d64`                     | `1.0.0`    | Dominic Tarr        | [https://github.com/dominictarr/d64](https://github.com/dominictarr/d64)                                           |
 | `debug`                   | `4.1.1`    | TJ Holowaychuk      | [https://github.com/visionmedia/debug](https://github.com/visionmedia/debug)                                       |
 | `decamelize`              | `1.2.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/decamelize](https://github.com/sindresorhus/decamelize)                           |
-| `dot-prop`                | `5.2.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/dot-prop](https://github.com/sindresorhus/dot-prop)                               |
+| `dot-prop`                | `5.3.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/dot-prop](https://github.com/sindresorhus/dot-prop)                               |
 | `duplexify`               | `3.7.1`    | Mathias Buus        | [https://github.com/mafintosh/duplexify](https://github.com/mafintosh/duplexify)                                   |
 | `duplexify`               | `4.1.1`    | Mathias Buus        | [https://github.com/mafintosh/duplexify](https://github.com/mafintosh/duplexify)                                   |
 | `ee-first`                | `1.1.1`    | Jonathan Ong        | [https://github.com/jonathanong/ee-first](https://github.com/jonathanong/ee-first)                                 |
@@ -157,7 +159,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `extend`                  | `3.0.2`    | Stefan Thomas       | [https://github.com/justmoon/node-extend](https://github.com/justmoon/node-extend)                                 |
 | `find-up`                 | `4.1.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/find-up](https://github.com/sindresorhus/find-up)                                 |
 | `google-p12-pem`          | `2.0.4`    | Ryan Seys           | [https://github.com/google/google-p12-pem](https://github.com/google/google-p12-pem)                               |
-| `google-p12-pem`          | `3.0.2`    | Ryan Seys           | [https://github.com/google/google-p12-pem](https://github.com/google/google-p12-pem)                               |
+| `google-p12-pem`          | `3.0.3`    | Ryan Seys           | [https://github.com/google/google-p12-pem](https://github.com/google/google-p12-pem)                               |
 | `gtoken`                  | `4.1.4`    | Google, LLC         | [https://github.com/google/node-gtoken](https://github.com/google/node-gtoken)                                     |
 | `gtoken`                  | `5.0.3`    | Google, LLC         | [https://github.com/google/node-gtoken](https://github.com/google/node-gtoken)                                     |
 | `http-proxy-agent`        | `4.0.1`    | Nathan Rajlich      | [https://github.com/TooTallNate/node-http-proxy-agent](https://github.com/TooTallNate/node-http-proxy-agent)       |
@@ -191,7 +193,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `readable-stream`         | `2.3.7`    |                     | [https://github.com/nodejs/readable-stream](https://github.com/nodejs/readable-stream)                             |
 | `readable-stream`         | `3.6.0`    |                     | [https://github.com/nodejs/readable-stream](https://github.com/nodejs/readable-stream)                             |
 | `require-directory`       | `2.1.1`    | Troy Goode          | [https://github.com/troygoode/node-require-directory](https://github.com/troygoode/node-require-directory)         |
-| `retry-request`           | `4.1.2`    | Stephen Sawchuk     | [https://github.com/stephenplusplus/retry-request](https://github.com/stephenplusplus/retry-request)               |
+| `retry-request`           | `4.1.3`    | Stephen Sawchuk     | [https://github.com/stephenplusplus/retry-request](https://github.com/stephenplusplus/retry-request)               |
 | `safe-buffer`             | `5.1.2`    | Feross Aboukhadijeh | [https://github.com/feross/safe-buffer](https://github.com/feross/safe-buffer)                                     |
 | `snakecase-keys`          | `3.2.0`    | Ben Drucker         | [https://github.com/bendrucker/snakecase-keys](https://github.com/bendrucker/snakecase-keys)                       |
 | `stream-events`           | `1.0.5`    | Stephen Sawchuk     | [https://github.com/stephenplusplus/stream-events](https://github.com/stephenplusplus/stream-events)               |
@@ -200,7 +202,6 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `string_decoder`          | `1.1.1`    |                     | [https://github.com/nodejs/string_decoder](https://github.com/nodejs/string_decoder)                               |
 | `strip-ansi`              | `6.0.0`    | Sindre Sorhus       | [https://github.com/chalk/strip-ansi](https://github.com/chalk/strip-ansi)                                         |
 | `stubs`                   | `3.0.0`    | Stephen Sawchuk     | [https://github.com/stephenplusplus/stubs](https://github.com/stephenplusplus/stubs)                               |
-| `through2`                | `3.0.2`    | Rod Vagg            | [https://github.com/rvagg/through2](https://github.com/rvagg/through2)                                             |
 | `through2`                | `4.0.2`    | Rod Vagg            | [https://github.com/rvagg/through2](https://github.com/rvagg/through2)                                             |
 | `to-no-case`              | `1.0.2`    |                     | [https://github.com/ianstormtaylor/to-no-case](https://github.com/ianstormtaylor/to-no-case)                       |
 | `to-snake-case`           | `1.0.0`    |                     | [https://github.com/ianstormtaylor/to-snake-case](https://github.com/ianstormtaylor/to-snake-case)                 |
