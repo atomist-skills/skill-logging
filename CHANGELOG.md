@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/skill-logging/compare/0.2.3...HEAD)
 
+### Changed
+
+-   Update @google-cloud/logging. [9bcb990](https://github.com/atomist-skills/skill-logging/commit/9bcb99021f119ac2ce738b6454ae661603d03940)
+
 ## [0.2.3](https://github.com/atomist-skills/skill-logging/compare/0.2.2...0.2.3) - 2020-09-25
 
 ### Fixed
