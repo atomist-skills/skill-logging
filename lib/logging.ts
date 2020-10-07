@@ -19,7 +19,7 @@ import { Logging } from "@google-cloud/logging";
 /**
  * Severity of User-facing skill logging
  *
- * Note: This starts at INFO level because everything below should
+ * Note: This starts at Info level because everything below should
  * be considered debug output considered for the skill author only.
  */
 export enum Severity {
