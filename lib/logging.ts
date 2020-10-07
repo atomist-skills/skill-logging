@@ -29,7 +29,7 @@ export enum Severity {
 }
 
 /**
- * Simple logging object suitable for submitting Skill audit logs
+ * Logging object suitable for submitting Skill audit logs
  */
 export interface Logger {
 	/**
