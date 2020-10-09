@@ -22,17 +22,16 @@ await logger.log("Some warning message", Severity.Warning);
 
 ## Contributing
 
-Contributions to this project from community members are encouraged
-and appreciated. Please review the [Contributing
-Guidelines](CONTRIBUTING.md) for more information. Also see the
-[Development](#development) section in this document.
+Contributions to this project from community members are encouraged and
+appreciated. Please review the [Contributing Guidelines](CONTRIBUTING.md) for
+more information. Also see the [Development](#development) section in this
+document.
 
 ## Code of conduct
 
-This project is governed by the [Code of
-Conduct](CODE_OF_CONDUCT.md). You are expected to act in accordance
-with this code by participating. Please report any unacceptable
-behavior to code-of-conduct@atomist.com.
+This project is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). You are
+expected to act in accordance with this code by participating. Please report any
+unacceptable behavior to code-of-conduct@atomist.com.
 
 ## Documentation
 
@@ -49,8 +48,8 @@ Follow [@atomist][atomist-twitter] and the [Atomist blog][atomist-blog].
 
 ## Support
 
-General support questions should be discussed in the `#support`
-channel in the [Atomist community Slack workspace][slack].
+General support questions should be discussed in the `#support` channel in the
+[Atomist community Slack workspace][slack].
 
 If you find a problem, please create an [issue][].
 
@@ -58,8 +57,7 @@ If you find a problem, please create an [issue][].
 
 ## Development
 
-You will need to install [Node.js][node] to build and test this
-project.
+You will need to install [Node.js][node] to build and test this project.
 
 [node]: https://nodejs.org/ "Node.js"
 
@@ -85,8 +83,7 @@ version tag to this repository.
 
 ---
 
-Created by [Atomist][atomist].
-Need Help? [Join our Slack workspace][slack].
+Created by [Atomist][atomist]. Need Help? [Join our Slack workspace][slack].
 
 [atomist]: https://atomist.com/ "Atomist - Automation All the Software Things"
 [slack]: https://join.atomist.com/ "Atomist Community Slack"
