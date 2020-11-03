@@ -25,11 +25,11 @@ Apache License 2.0 - [http://www.apache.org/licenses/LICENSE-2.0](http://www.apa
 | Name                                  | Version      | Publisher          | Repository                                                                                                                       |
 | ------------------------------------- | ------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | `@google-cloud/common`                | `3.4.1`      | Google Inc.        | [https://github.com/googleapis/nodejs-common](https://github.com/googleapis/nodejs-common)                                       |
-| `@google-cloud/logging`               | `8.0.8`      | Google Inc.        | [https://github.com/googleapis/nodejs-logging](https://github.com/googleapis/nodejs-logging)                                     |
+| `@google-cloud/logging`               | `8.0.9`      | Google Inc.        | [https://github.com/googleapis/nodejs-logging](https://github.com/googleapis/nodejs-logging)                                     |
 | `@google-cloud/paginator`             | `3.0.5`      | Google Inc.        | [https://github.com/googleapis/nodejs-paginator](https://github.com/googleapis/nodejs-paginator)                                 |
 | `@google-cloud/projectify`            | `2.0.1`      | Google Inc.        | [https://github.com/googleapis/nodejs-projectify](https://github.com/googleapis/nodejs-projectify)                               |
 | `@google-cloud/promisify`             | `2.0.3`      | Google Inc.        | [https://github.com/googleapis/nodejs-promisify](https://github.com/googleapis/nodejs-promisify)                                 |
-| `@grpc/grpc-js`                       | `1.1.7`      | Google Inc.        | [https://github.com/grpc/grpc-node/tree/master/packages/grpc-js](https://github.com/grpc/grpc-node/tree/master/packages/grpc-js) |
+| `@grpc/grpc-js`                       | `1.1.8`      | Google Inc.        | [https://github.com/grpc/grpc-node/tree/master/packages/grpc-js](https://github.com/grpc/grpc-node/tree/master/packages/grpc-js) |
 | `@grpc/proto-loader`                  | `0.5.5`      | Google Inc.        | [https://github.com/grpc/grpc-node](https://github.com/grpc/grpc-node)                                                           |
 | `@grpc/proto-loader`                  | `0.6.0-pre9` | Google Inc.        | [https://github.com/grpc/grpc-node](https://github.com/grpc/grpc-node)                                                           |
 | `@opencensus/core`                    | `0.0.22`     | Google Inc.        | [https://github.com/census-instrumentation/opencensus-node](https://github.com/census-instrumentation/opencensus-node)           |
@@ -37,10 +37,10 @@ Apache License 2.0 - [http://www.apache.org/licenses/LICENSE-2.0](http://www.apa
 | `ecdsa-sig-formatter`                 | `1.0.11`     | D2L Corporation    | [https://github.com/Brightspace/node-ecdsa-sig-formatter](https://github.com/Brightspace/node-ecdsa-sig-formatter)               |
 | `eventid`                             | `1.0.0`      | Google Inc.        | [https://github.com/google/eventid-js](https://github.com/google/eventid-js)                                                     |
 | `fast-text-encoding`                  | `1.0.3`      | Sam Thorogood      | [https://github.com/samthor/fast-text-encoding](https://github.com/samthor/fast-text-encoding)                                   |
-| `gaxios`                              | `3.2.0`      | Google, LLC        | [https://github.com/googleapis/gaxios](https://github.com/googleapis/gaxios)                                                     |
-| `gcp-metadata`                        | `4.2.0`      | Stephen Sawchuk    | [https://github.com/googleapis/gcp-metadata](https://github.com/googleapis/gcp-metadata)                                         |
-| `google-auth-library`                 | `6.1.1`      | Google Inc.        | [https://github.com/googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs)             |
-| `google-gax`                          | `2.9.0`      | Google API Authors | [https://github.com/googleapis/gax-nodejs](https://github.com/googleapis/gax-nodejs)                                             |
+| `gaxios`                              | `4.0.1`      | Google, LLC        | [https://github.com/googleapis/gaxios](https://github.com/googleapis/gaxios)                                                     |
+| `gcp-metadata`                        | `4.2.1`      | Stephen Sawchuk    | [https://github.com/googleapis/gcp-metadata](https://github.com/googleapis/gcp-metadata)                                         |
+| `google-auth-library`                 | `6.1.3`      | Google Inc.        | [https://github.com/googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs)             |
+| `google-gax`                          | `2.9.1`      | Google API Authors | [https://github.com/googleapis/gax-nodejs](https://github.com/googleapis/gax-nodejs)                                             |
 | `hex2dec`                             | `1.1.2`      |                    | [https://github.com/donmccurdy/hex2dec](https://github.com/donmccurdy/hex2dec)                                                   |
 | `long`                                | `4.0.0`      | Daniel Wirtz       | [https://github.com/dcodeIO/long.js](https://github.com/dcodeIO/long.js)                                                         |
 | `teeny-request`                       | `7.0.1`      | fhinkel            | [https://github.com/googleapis/teeny-request](https://github.com/googleapis/teeny-request)                                       |
@@ -82,7 +82,7 @@ Creative Commons Zero v1.0 Universal - [https://creativecommons.org/publicdomain
 
 | Name        | Version  | Publisher     | Repository                                                                             |
 | ----------- | -------- | ------------- | -------------------------------------------------------------------------------------- |
-| `type-fest` | `0.17.0` | Sindre Sorhus | [https://github.com/sindresorhus/type-fest](https://github.com/sindresorhus/type-fest) |
+| `type-fest` | `0.18.0` | Sindre Sorhus | [https://github.com/sindresorhus/type-fest](https://github.com/sindresorhus/type-fest) |
 
 #### GPL-2.0
 
@@ -124,10 +124,10 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `@tootallnate/once`       | `1.1.2`    | Nathan Rajlich      | [https://github.com/TooTallNate/once](https://github.com/TooTallNate/once)                                         |
 | `@types/color-name`       | `1.1.1`    |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/long`             | `4.0.1`    |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
-| `@types/node`             | `12.12.64` |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
+| `@types/node`             | `12.19.3`  |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/node`             | `13.13.13` |                     | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `abort-controller`        | `3.0.0`    | Toru Nagashima      | [https://github.com/mysticatea/abort-controller](https://github.com/mysticatea/abort-controller)                   |
-| `agent-base`              | `6.0.1`    | Nathan Rajlich      | [https://github.com/TooTallNate/node-agent-base](https://github.com/TooTallNate/node-agent-base)                   |
+| `agent-base`              | `6.0.2`    | Nathan Rajlich      | [https://github.com/TooTallNate/node-agent-base](https://github.com/TooTallNate/node-agent-base)                   |
 | `ansi-regex`              | `5.0.0`    | Sindre Sorhus       | [https://github.com/chalk/ansi-regex](https://github.com/chalk/ansi-regex)                                         |
 | `ansi-styles`             | `4.2.1`    | Sindre Sorhus       | [https://github.com/chalk/ansi-styles](https://github.com/chalk/ansi-styles)                                       |
 | `arrify`                  | `2.0.1`    | Sindre Sorhus       | [https://github.com/sindresorhus/arrify](https://github.com/sindresorhus/arrify)                                   |
@@ -139,7 +139,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `d64`                     | `1.0.0`    | Dominic Tarr        | [https://github.com/dominictarr/d64](https://github.com/dominictarr/d64)                                           |
 | `debug`                   | `4.1.1`    | TJ Holowaychuk      | [https://github.com/visionmedia/debug](https://github.com/visionmedia/debug)                                       |
 | `decamelize`              | `1.2.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/decamelize](https://github.com/sindresorhus/decamelize)                           |
-| `dot-prop`                | `5.3.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/dot-prop](https://github.com/sindresorhus/dot-prop)                               |
+| `dot-prop`                | `6.0.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/dot-prop](https://github.com/sindresorhus/dot-prop)                               |
 | `duplexify`               | `4.1.1`    | Mathias Buus        | [https://github.com/mafintosh/duplexify](https://github.com/mafintosh/duplexify)                                   |
 | `ee-first`                | `1.1.1`    | Jonathan Ong        | [https://github.com/jonathanong/ee-first](https://github.com/jonathanong/ee-first)                                 |
 | `emoji-regex`             | `8.0.0`    | Mathias Bynens      | [https://github.com/mathiasbynens/emoji-regex](https://github.com/mathiasbynens/emoji-regex)                       |
@@ -149,7 +149,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `extend`                  | `3.0.2`    | Stefan Thomas       | [https://github.com/justmoon/node-extend](https://github.com/justmoon/node-extend)                                 |
 | `find-up`                 | `4.1.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/find-up](https://github.com/sindresorhus/find-up)                                 |
 | `google-p12-pem`          | `3.0.3`    | Ryan Seys           | [https://github.com/google/google-p12-pem](https://github.com/google/google-p12-pem)                               |
-| `gtoken`                  | `5.0.4`    | Google, LLC         | [https://github.com/google/node-gtoken](https://github.com/google/node-gtoken)                                     |
+| `gtoken`                  | `5.0.5`    | Google, LLC         | [https://github.com/google/node-gtoken](https://github.com/google/node-gtoken)                                     |
 | `http-proxy-agent`        | `4.0.1`    | Nathan Rajlich      | [https://github.com/TooTallNate/node-http-proxy-agent](https://github.com/TooTallNate/node-http-proxy-agent)       |
 | `https-proxy-agent`       | `5.0.0`    | Nathan Rajlich      | [https://github.com/TooTallNate/node-https-proxy-agent](https://github.com/TooTallNate/node-https-proxy-agent)     |
 | `is-fullwidth-code-point` | `3.0.0`    | Sindre Sorhus       | [https://github.com/sindresorhus/is-fullwidth-code-point](https://github.com/sindresorhus/is-fullwidth-code-point) |
@@ -189,7 +189,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `to-no-case`              | `1.0.2`    |                     | [https://github.com/ianstormtaylor/to-no-case](https://github.com/ianstormtaylor/to-no-case)                       |
 | `to-snake-case`           | `1.0.0`    |                     | [https://github.com/ianstormtaylor/to-snake-case](https://github.com/ianstormtaylor/to-snake-case)                 |
 | `to-space-case`           | `1.0.0`    |                     | [https://github.com/ianstormtaylor/to-space-case](https://github.com/ianstormtaylor/to-space-case)                 |
-| `type-fest`               | `0.17.0`   | Sindre Sorhus       | [https://github.com/sindresorhus/type-fest](https://github.com/sindresorhus/type-fest)                             |
+| `type-fest`               | `0.18.0`   | Sindre Sorhus       | [https://github.com/sindresorhus/type-fest](https://github.com/sindresorhus/type-fest)                             |
 | `util-deprecate`          | `1.0.2`    | Nathan Rajlich      | [https://github.com/TooTallNate/util-deprecate](https://github.com/TooTallNate/util-deprecate)                     |
 | `uuid`                    | `3.4.0`    |                     | [https://github.com/uuidjs/uuid](https://github.com/uuidjs/uuid)                                                   |
 | `uuid`                    | `8.3.1`    |                     | [https://github.com/uuidjs/uuid](https://github.com/uuidjs/uuid)                                                   |
