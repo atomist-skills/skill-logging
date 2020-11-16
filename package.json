@@ -23,7 +23,7 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "@google-cloud/logging": "^8.1.0"
+    "@google-cloud/logging": "^8.1.1"
   },
   "devDependencies": {
     "@atomist/npm-tools": "0.1.0-master.20200709090755",
