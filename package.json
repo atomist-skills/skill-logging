@@ -1,27 +1,55 @@
 {
   "name": "@atomist/skill-logging",
+  "version": "0.2.7",
   "description": "Atomist Skill Logging API",
-  "author": {
-    "name": "Atomist",
-    "email": "support@atomist.com",
-    "url": "https://atomist.com/"
-  },
-  "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/atomist-skills/skill-logging.git"
-  },
   "keywords": [
     "atomist",
     "automation",
     "skill"
   ],
-  "homepage": "https://github.com/atomist-skills/skill-logging#readme",
+  "homepage": "https://github.com/atomist-skills/skill-logging",
   "bugs": {
     "url": "https://github.com/atomist-skills/skill-logging/issues"
   },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Atomist, Inc.",
+    "email": "oss@atomist.com",
+    "url": "https://atomist.com"
+  },
   "main": "./index.js",
-  "types": "./index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atomist-skills/skill-logging.git"
+  },
+  "scripts": {
+    "atm:lint:eslint": "eslint --fix",
+    "atm:lint:prettier": "prettier --write",
+    "autotest": "supervisor --watch index.ts,lib,test --extensions ts --no-restart-on exit --quiet --exec npm -- test",
+    "build": "run-s compile test lint doc",
+    "clean": "run-p clean:compile clean:test clean:doc clean:run",
+    "clean:compile": "rimraf git-info.json build \"index.{d.ts,js}{,.map}\" \"{bin,lib,test}/**/*.{d.ts,js}{,.map}\" lib/typings/types.ts",
+    "clean:dist": "run-s clean clean:npm",
+    "clean:doc": "rimraf doc",
+    "clean:npm": "rimraf node_modules",
+    "clean:run": "rimraf *-v8.log profile.txt log",
+    "clean:test": "rimraf .nyc_output coverage",
+    "compile": "run-s compile:ts",
+    "compile:ts": "tsc --project .",
+    "doc": "typedoc --mode modules --excludeExternals --ignoreCompilerErrors --exclude \"**/*.d.ts\" --out doc index.ts lib",
+    "fmt": "run-s fmt:gql",
+    "fmt:gql": "prettier --write \"lib/graphql/**/*.graphql\"",
+    "gql:gen": "atm-gql-gen",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "npm run lint -- --fix",
+    "prepack": "atm-npm-tools source-maps",
+    "test": "mocha --require espower-typescript/guess \"test/**/*.test.ts\"",
+    "test:one": "mocha --require espower-typescript/guess \"test/**/${TEST:-*.test.ts}\"",
+    "typedoc": "npm run doc"
+  },
   "dependencies": {
     "@google-cloud/logging": "^8.1.0"
   },
@@ -51,34 +79,6 @@
     "typedoc": "^0.17.8",
     "typescript": "^3.9.7"
   },
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "autotest": "supervisor --watch index.ts,lib,test --extensions ts --no-restart-on exit --quiet --exec npm -- test",
-    "build": "run-s compile test lint doc",
-    "clean": "run-p clean:compile clean:test clean:doc clean:run",
-    "clean:compile": "rimraf git-info.json build \"index.{d.ts,js}{,.map}\" \"{bin,lib,test}/**/*.{d.ts,js}{,.map}\" lib/typings/types.ts",
-    "clean:dist": "run-s clean clean:npm",
-    "clean:doc": "rimraf doc",
-    "clean:npm": "rimraf node_modules",
-    "clean:run": "rimraf *-v8.log profile.txt log",
-    "clean:test": "rimraf .nyc_output coverage",
-    "compile": "run-s compile:ts",
-    "compile:ts": "tsc --project .",
-    "doc": "typedoc --mode modules --excludeExternals --ignoreCompilerErrors --exclude \"**/*.d.ts\" --out doc index.ts lib",
-    "fmt": "run-s fmt:gql",
-    "fmt:gql": "prettier --write \"lib/graphql/**/*.graphql\"",
-    "gql:gen": "atm-gql-gen",
-    "lint": "eslint --ext .ts .",
-    "lint:fix": "npm run lint -- --fix",
-    "test": "mocha --require espower-typescript/guess \"test/**/*.test.ts\"",
-    "test:one": "mocha --require espower-typescript/guess \"test/**/${TEST:-*.test.ts}\"",
-    "typedoc": "npm run doc",
-    "prepack": "atm-npm-tools source-maps",
-    "atm:lint:eslint": "eslint --fix",
-    "atm:lint:prettier": "prettier --write"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -88,5 +88,5 @@
     "**/*.ts": "npm run atm:lint:eslint",
     "**/*.@(graphql|json|markdown|yaml|yml|md)": "npm run atm:lint:prettier"
   },
-  "version": "0.2.7"
+  "types": "./index.d.ts"
 }
