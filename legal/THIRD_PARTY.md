@@ -24,8 +24,8 @@ Apache License 2.0 - [http://www.apache.org/licenses/LICENSE-2.0](http://www.apa
 
 | Name                                  | Version      | Publisher          | Repository                                                                                                                       |
 | ------------------------------------- | ------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| `@google-cloud/common`                | `3.4.1`      | Google Inc.        | [https://github.com/googleapis/nodejs-common](https://github.com/googleapis/nodejs-common)                                       |
-| `@google-cloud/logging`               | `8.1.0`      | Google Inc.        | [https://github.com/googleapis/nodejs-logging](https://github.com/googleapis/nodejs-logging)                                     |
+| `@google-cloud/common`                | `3.5.0`      | Google Inc.        | [https://github.com/googleapis/nodejs-common](https://github.com/googleapis/nodejs-common)                                       |
+| `@google-cloud/logging`               | `8.1.1`      | Google Inc.        | [https://github.com/googleapis/nodejs-logging](https://github.com/googleapis/nodejs-logging)                                     |
 | `@google-cloud/paginator`             | `3.0.5`      | Google Inc.        | [https://github.com/googleapis/nodejs-paginator](https://github.com/googleapis/nodejs-paginator)                                 |
 | `@google-cloud/projectify`            | `2.0.1`      | Google Inc.        | [https://github.com/googleapis/nodejs-projectify](https://github.com/googleapis/nodejs-projectify)                               |
 | `@google-cloud/promisify`             | `2.0.3`      | Google Inc.        | [https://github.com/googleapis/nodejs-promisify](https://github.com/googleapis/nodejs-promisify)                                 |
@@ -74,7 +74,7 @@ BSD 3-Clause "New" or "Revised" License - [https://opensource.org/licenses/BSD-3
 | `@protobufjs/utf8`           | `1.1.0`  | Daniel Wirtz                             | [https://github.com/dcodeIO/protobuf.js](https://github.com/dcodeIO/protobuf.js)                                   |
 | `buffer-equal-constant-time` | `1.0.1`  | GoInstant Inc., a salesforce.com company | [https://github.com/goinstant/buffer-equal-constant-time](https://github.com/goinstant/buffer-equal-constant-time) |
 | `node-forge`                 | `0.10.0` | Digital Bazaar, Inc.                     | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge)                                   |
-| `protobufjs`                 | `6.10.1` | Daniel Wirtz                             | [https://github.com/protobufjs/protobuf.js](https://github.com/protobufjs/protobuf.js)                             |
+| `protobufjs`                 | `6.10.2` | Daniel Wirtz                             | [https://github.com/protobufjs/protobuf.js](https://github.com/protobufjs/protobuf.js)                             |
 
 #### CC0-1.0
 
@@ -82,7 +82,7 @@ Creative Commons Zero v1.0 Universal - [https://creativecommons.org/publicdomain
 
 | Name        | Version  | Publisher     | Repository                                                                             |
 | ----------- | -------- | ------------- | -------------------------------------------------------------------------------------- |
-| `type-fest` | `0.18.0` | Sindre Sorhus | [https://github.com/sindresorhus/type-fest](https://github.com/sindresorhus/type-fest) |
+| `type-fest` | `0.19.0` | Sindre Sorhus | [https://github.com/sindresorhus/type-fest](https://github.com/sindresorhus/type-fest) |
 
 #### GPL-2.0
 
@@ -131,7 +131,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `ansi-regex`              | `5.0.0`    | Sindre Sorhus       | [https://github.com/chalk/ansi-regex](https://github.com/chalk/ansi-regex)                                         |
 | `ansi-styles`             | `4.2.1`    | Sindre Sorhus       | [https://github.com/chalk/ansi-styles](https://github.com/chalk/ansi-styles)                                       |
 | `arrify`                  | `2.0.1`    | Sindre Sorhus       | [https://github.com/sindresorhus/arrify](https://github.com/sindresorhus/arrify)                                   |
-| `base64-js`               | `1.3.1`    | T. Jameson Little   | [https://github.com/beatgammit/base64-js](https://github.com/beatgammit/base64-js)                                 |
+| `base64-js`               | `1.5.1`    | T. Jameson Little   | [https://github.com/beatgammit/base64-js](https://github.com/beatgammit/base64-js)                                 |
 | `bignumber.js`            | `9.0.1`    | Michael Mclaughlin  | [https://github.com/MikeMcl/bignumber.js](https://github.com/MikeMcl/bignumber.js)                                 |
 | `camelcase`               | `5.3.1`    | Sindre Sorhus       | [https://github.com/sindresorhus/camelcase](https://github.com/sindresorhus/camelcase)                             |
 | `color-convert`           | `2.0.1`    | Heather Arthur      | [https://github.com/Qix-/color-convert](https://github.com/Qix-/color-convert)                                     |
@@ -189,7 +189,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `to-no-case`              | `1.0.2`    |                     | [https://github.com/ianstormtaylor/to-no-case](https://github.com/ianstormtaylor/to-no-case)                       |
 | `to-snake-case`           | `1.0.0`    |                     | [https://github.com/ianstormtaylor/to-snake-case](https://github.com/ianstormtaylor/to-snake-case)                 |
 | `to-space-case`           | `1.0.0`    |                     | [https://github.com/ianstormtaylor/to-space-case](https://github.com/ianstormtaylor/to-space-case)                 |
-| `type-fest`               | `0.18.0`   | Sindre Sorhus       | [https://github.com/sindresorhus/type-fest](https://github.com/sindresorhus/type-fest)                             |
+| `type-fest`               | `0.19.0`   | Sindre Sorhus       | [https://github.com/sindresorhus/type-fest](https://github.com/sindresorhus/type-fest)                             |
 | `util-deprecate`          | `1.0.2`    | Nathan Rajlich      | [https://github.com/TooTallNate/util-deprecate](https://github.com/TooTallNate/util-deprecate)                     |
 | `uuid`                    | `3.4.0`    |                     | [https://github.com/uuidjs/uuid](https://github.com/uuidjs/uuid)                                                   |
 | `uuid`                    | `8.3.1`    |                     | [https://github.com/uuidjs/uuid](https://github.com/uuidjs/uuid)                                                   |
