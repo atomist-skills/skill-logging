@@ -55,7 +55,7 @@
     "typedoc": "npm run doc"
   },
   "dependencies": {
-    "@google-cloud/logging": "^8.1.1"
+    "@google-cloud/logging": "^8.2.0"
   },
   "devDependencies": {
     "@atomist/npm-tools": "0.1.0-master.20200709090755",
