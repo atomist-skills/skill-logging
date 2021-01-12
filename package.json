@@ -58,11 +58,8 @@
   "devDependencies": {
     "@atomist/npm-tools": "0.1.0-master.20200709090755",
     "@google-cloud/functions-framework": "^1.7.1",
-    "@types/lodash": "^4.14.167",
     "@types/mocha": "^7.0.2",
-    "@types/node-fetch": "^2.5.7",
     "@types/power-assert": "^1.5.3",
-    "@types/yargs-parser": "^15.0.0",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
     "eslint": "^7.17.0",
