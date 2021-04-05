@@ -13,3 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import { createLogger, Severity } from "../lib/logging";
+
+describe("test", () => {
+	it("should close without entries", async () => {
+		const logger = createLogger({
+			skillId: Date.now().toString(),
+			workspaceId: "T095SFFBK",
+			correlationId: Date.now().toString(),
+		});
+		await logger.close();
+	});
+	it("should log and then close", async () => {
+		const logger = createLogger({
+			skillId: Date.now().toString(),
+			workspaceId: "T095SFFBK",
+			correlationId: Date.now().toString(),
+		});
+		for (let i = 0; i < 100; i++) {
+			logger.log(i.toString(), Severity.Debug);
+		}
+		await logger.close();
+	}).timeout(100000000);
+});
