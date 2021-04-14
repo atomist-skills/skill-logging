@@ -62,7 +62,7 @@ export function createLogger(
 		workspaceId: string;
 	},
 	labels: Record<string, any> = {},
-	name = "skills_audit",
+	name = "skills_logging",
 	project?: string,
 ): Logger {
 	if (
