@@ -53,7 +53,10 @@
     "typedoc": "npm run doc"
   },
   "dependencies": {
-    "@google-cloud/logging": "^8.2.0"
+    "@google-cloud/logging": "^8.2.0",
+    "@types/better-queue": "^3.8.2",
+    "@types/p-defer": "^2.0.0",
+    "better-queue": "^3.8.10"
   },
   "devDependencies": {
     "@atomist/npm-tools": "0.1.0-master.20200709090755",

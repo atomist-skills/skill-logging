@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import { Logging } from "@google-cloud/logging";
+import { Entry, Logging, Severity as GcpSeverity } from "@google-cloud/logging";
+import * as Queue from "better-queue";
 
 /**
  * Severity of User-facing skill logging
@@ -23,9 +24,10 @@ import { Logging } from "@google-cloud/logging";
  * be considered debug output considered for the skill author only.
  */
 export enum Severity {
-	Info,
-	Warning,
-	Error,
+	Debug = GcpSeverity.debug,
+	Info = GcpSeverity.info,
+	Warning = GcpSeverity.warning,
+	Error = GcpSeverity.error,
 }
 
 /**
@@ -42,7 +44,9 @@ export interface Logger {
 		msg: string | string[],
 		severity?: Severity,
 		labels?: Record<string, any>,
-	): Promise<void>;
+	): void;
+
+	close(): Promise<void>;
 }
 
 /**
@@ -51,14 +55,24 @@ export interface Logger {
  * @param labels additional labels to be added to the audit log
  */
 export function createLogger(
-	context: { eventId?: string; correlationId: string; workspaceId: string },
+	context: {
+		eventId?: string;
+		skillId: string;
+		correlationId: string;
+		workspaceId: string;
+	},
 	labels: Record<string, any> = {},
-	name = "skills_audit",
+	name = "skills_logging",
 	project?: string,
 ): Logger {
-	if (!context || !context.correlationId || !context.workspaceId) {
+	if (
+		!context ||
+		!context.correlationId ||
+		!context.workspaceId ||
+		!context.skillId
+	) {
 		throw new Error(
-			`Provided context is missing correlationId and/or workspaceId: ${JSON.stringify(
+			`Provided context is missing correlationId, workspaceId, skillId: ${JSON.stringify(
 				context,
 			)}`,
 		);
@@ -69,8 +83,74 @@ export function createLogger(
 	});
 	const log = logging.log(name);
 
+	let skipGl = false;
+	const logQueue = new Queue<
+		{ entries: Entry[]; messages: string[]; severity: Severity },
+		Promise<void>
+	>({
+		process: async (
+			entry: { entries: Entry[]; messages: string[]; severity: Severity },
+			cb,
+		) => {
+			const gl = async (cb: () => Promise<any>) => {
+				if (skipGl) {
+					return;
+				}
+				try {
+					await cb();
+				} catch (e) {
+					if (
+						e.message.startsWith(
+							"Unable to detect a Project Id in the current environment.",
+						)
+					) {
+						skipGl = true;
+					}
+				}
+			};
+
+			const cl = (e: string[], cb: (msg) => void) => {
+				e.forEach(en => cb(en));
+			};
+
+			switch (entry.severity) {
+				case Severity.Debug:
+					await gl(() => log.debug(entry.entries));
+					cl(entry.messages, console.debug);
+					break;
+				case Severity.Info:
+					await gl(() => log.info(entry.entries));
+					cl(entry.messages, console.info);
+					break;
+				case Severity.Warning:
+					await gl(() => log.warning(entry.entries));
+					cl(entry.messages, console.warn);
+					break;
+				case Severity.Error:
+					await gl(() => log.error(entry.entries));
+					cl(entry.messages, console.error);
+					break;
+			}
+			cb();
+		},
+		concurrent: 1,
+		batchSize: 1,
+	});
+	logQueue.resume();
+
+	let closing = false;
+	let started = false;
+	const drained = new Promise<void>(resolve => {
+		logQueue.on("drain", () => {
+			if (closing) {
+				resolve();
+			}
+		});
+	});
+
 	return {
-		log: async (msg, severity = Severity.Info, labelss = {}) => {
+		log: (msg, severity: Severity = Severity.Info, labelss = {}) => {
+			started = true;
 			const metadata = {
 				labels: {
 					...labels,
@@ -78,6 +158,7 @@ export function createLogger(
 					execution_id: context.eventId,
 					correlation_id: context.correlationId,
 					workspace_id: context.workspaceId,
+					skill_id: context.skillId,
 				},
 				resource: {
 					type: "global",
@@ -91,17 +172,18 @@ export function createLogger(
 				entries.push(log.entry(metadata, msg));
 			}
 
-			switch (severity) {
-				case Severity.Warning:
-					await log.warning(entries);
-					break;
-				case Severity.Error:
-					await log.error(entries);
-					break;
-				default:
-					await log.info(entries);
-					break;
+			logQueue.push({
+				entries,
+				severity,
+				messages: Array.isArray(msg) ? msg : [msg],
+			});
+		},
+		close: async () => {
+			if (!started) {
+				return Promise.resolve();
 			}
+			closing = true;
+			return drained;
 		},
 	};
 }
