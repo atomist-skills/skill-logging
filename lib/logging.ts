@@ -92,43 +92,53 @@ export function createLogger(
 			entry: { entries: Entry[]; messages: string[]; severity: Severity },
 			cb,
 		) => {
-			const gl = async (cb: () => Promise<any>) => {
-				if (skipGl) {
-					return;
-				}
-				try {
-					await cb();
-				} catch (e) {
-					if (
-						e.message.startsWith(
-							"Unable to detect a Project Id in the current environment.",
-						)
-					) {
-						skipGl = true;
-					}
-				}
-			};
-
 			const cl = (e: string[], cb: (msg) => void) => {
 				e.forEach(en => cb(en));
 			};
 
+			const gl = async (cb: () => Promise<any>, fcb: () => void) => {
+				if (skipGl) {
+					fcb();
+				} else {
+					try {
+						await cb();
+					} catch (e) {
+						if (
+							e.message.startsWith(
+								"Unable to detect a Project Id in the current environment.",
+							)
+						) {
+							fcb();
+							skipGl = true;
+						}
+					}
+				}
+			};
+
 			switch (entry.severity) {
 				case Severity.Debug:
-					await gl(() => log.debug(entry.entries));
-					cl(entry.messages, console.debug);
+					await gl(
+						() => log.debug(entry.entries),
+						() => cl(entry.messages, console.debug),
+					);
 					break;
 				case Severity.Info:
-					await gl(() => log.info(entry.entries));
-					cl(entry.messages, console.info);
+					await gl(
+						() => log.info(entry.entries),
+						() => cl(entry.messages, console.info),
+					);
 					break;
 				case Severity.Warning:
-					await gl(() => log.warning(entry.entries));
-					cl(entry.messages, console.warn);
+					await gl(
+						() => log.warning(entry.entries),
+						() => cl(entry.messages, console.warn),
+					);
 					break;
 				case Severity.Error:
-					await gl(() => log.error(entry.entries));
-					cl(entry.messages, console.error);
+					await gl(
+						() => log.error(entry.entries),
+						() => cl(entry.messages, console.error),
+					);
 					break;
 			}
 			cb();
