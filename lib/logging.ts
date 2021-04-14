@@ -165,7 +165,7 @@ export function createLogger(
 				labels: {
 					...labels,
 					...labelss,
-					execution_id: context.eventId,
+					event_id: context.eventId,
 					correlation_id: context.correlationId,
 					workspace_id: context.workspaceId,
 					skill_id: context.skillId,
