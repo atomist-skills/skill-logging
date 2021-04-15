@@ -16,7 +16,7 @@ This page details all runtime dependencies of `@atomist/skill-logging`.
 | [CC0-1.0](#cc0-10)            | 1     |
 | [GPL-2.0](#gpl-20)            | 1     |
 | [ISC](#isc)                   | 16    |
-| [MIT](#mit)                   | 80    |
+| [MIT](#mit)                   | 78    |
 
 #### Apache-2.0
 
@@ -127,7 +127,6 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `@types/long`             | `4.0.1`    |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/node`             | `12.19.8`  |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/node`             | `13.13.13` |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
-| `@types/p-defer`          | `2.0.0`    |                      | [https://github.com/sindresorhus/p-defer](https://github.com/sindresorhus/p-defer)                                 |
 | `abort-controller`        | `3.0.0`    | Toru Nagashima       | [https://github.com/mysticatea/abort-controller](https://github.com/mysticatea/abort-controller)                   |
 | `agent-base`              | `6.0.2`    | Nathan Rajlich       | [https://github.com/TooTallNate/node-agent-base](https://github.com/TooTallNate/node-agent-base)                   |
 | `ansi-regex`              | `5.0.0`    | Sindre Sorhus        | [https://github.com/chalk/ansi-regex](https://github.com/chalk/ansi-regex)                                         |
@@ -172,7 +171,6 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `node-eta`                | `0.9.0`    | Constantin Titarenko | [https://github.com/titarenko/eta](https://github.com/titarenko/eta)                                               |
 | `node-fetch`              | `2.6.1`    | David Frank          | [https://github.com/bitinn/node-fetch](https://github.com/bitinn/node-fetch)                                       |
 | `on-finished`             | `2.3.0`    |                      | [https://github.com/jshttp/on-finished](https://github.com/jshttp/on-finished)                                     |
-| `p-defer`                 | `3.0.0`    | Sindre Sorhus        | [https://github.com/sindresorhus/p-defer](https://github.com/sindresorhus/p-defer)                                 |
 | `p-limit`                 | `2.3.0`    | Sindre Sorhus        | [https://github.com/sindresorhus/p-limit](https://github.com/sindresorhus/p-limit)                                 |
 | `p-locate`                | `4.1.0`    | Sindre Sorhus        | [https://github.com/sindresorhus/p-locate](https://github.com/sindresorhus/p-locate)                               |
 | `p-try`                   | `2.2.0`    | Sindre Sorhus        | [https://github.com/sindresorhus/p-try](https://github.com/sindresorhus/p-try)                                     |
