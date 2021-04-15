@@ -17,10 +17,6 @@
 import { Entry, Logging, Severity as GcpSeverity } from "@google-cloud/logging";
 import * as Queue from "better-queue";
 
-// This require is need to fix bundling and work around the
-// dynamic require in better-queue
-require("better-queue-memory");
-
 /**
  * Severity of User-facing skill logging
  *
@@ -88,10 +84,13 @@ export function createLogger(
 	const log = logging.log(name);
 
 	let skipGl = false;
+	// eslint-disable-next-line @typescript-eslint/no-var-requires
+	const Store = require("better-queue-memory");
 	const logQueue = new Queue<
 		{ entries: Entry[]; messages: string[]; severity: Severity },
 		Promise<void>
 	>({
+		store: new Store(),
 		process: async (
 			entry: { entries: Entry[]; messages: string[]; severity: Severity },
 			cb,
