@@ -92,8 +92,8 @@ export function createLogger(
 			entry: { entries: Entry[]; messages: string[]; severity: Severity },
 			cb,
 		) => {
-			const cl = (e: string[], cb: (msg) => void) => {
-				e.forEach(en => cb(en));
+			const cl = (e: string[], prefix: string, cb: (msg) => void) => {
+				e.forEach(en => cb(`${prefix} ${en}`));
 			};
 
 			const gl = async (cb: () => Promise<any>, fcb: () => void) => {
@@ -119,25 +119,25 @@ export function createLogger(
 				case Severity.Debug:
 					await gl(
 						() => log.debug(entry.entries),
-						() => cl(entry.messages, console.debug),
+						() => cl(entry.messages, "[debug]", console.debug),
 					);
 					break;
 				case Severity.Info:
 					await gl(
 						() => log.info(entry.entries),
-						() => cl(entry.messages, console.info),
+						() => cl(entry.messages, " [info]", console.info),
 					);
 					break;
 				case Severity.Warning:
 					await gl(
 						() => log.warning(entry.entries),
-						() => cl(entry.messages, console.warn),
+						() => cl(entry.messages, " [warn]", console.warn),
 					);
 					break;
 				case Severity.Error:
 					await gl(
 						() => log.error(entry.entries),
-						() => cl(entry.messages, console.error),
+						() => cl(entry.messages, "[error]", console.error),
 					);
 					break;
 			}
