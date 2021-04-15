@@ -55,17 +55,20 @@
   "dependencies": {
     "@google-cloud/logging": "^8.2.0",
     "@types/better-queue": "^3.8.2",
-    "better-queue": "^3.8.10"
+    "@types/p-defer": "^2.0.0",
+    "better-queue": "^3.8.10",
+    "better-queue-memory": "^1.0.4"
   },
   "devDependencies": {
     "@atomist/npm-tools": "0.1.0-master.20200709090755",
+    "@google-cloud/functions-framework": "^1.7.1",
     "@types/mocha": "^7.0.2",
     "@types/power-assert": "^1.5.3",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "espower-typescript": "^9.0.2",
     "husky": "4.3.0",

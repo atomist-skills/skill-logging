@@ -17,6 +17,10 @@
 import { Entry, Logging, Severity as GcpSeverity } from "@google-cloud/logging";
 import * as Queue from "better-queue";
 
+// This require is need to fix bundling and work around the
+// dynamic require in better-queue
+require("better-queue-memory");
+
 /**
  * Severity of User-facing skill logging
  *
