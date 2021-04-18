@@ -1,23 +1,28 @@
 # `@atomist/skill-logging`
 
-Simple API to log into the Skill Audit log stream.
+Simple API to log into the Skill log stream.
+
+This implementation will fall back to `console.log` for environments in which
+Google Cloud Logging is not accessible.
 
 ## Usage
 
-To use the Skill Audit log create and use a `Logger` as follows:
+To use the Skill Log create and use a `Logger` as follows:
 
 ```javascript
-import { createLogger, Severity } from "@atomist/skill-logging";
+import { createLogger } from "@atomist/skill-logging";
 
 const logger = createLogger({
-    correlationId: "correlationId from the incoming command or event payload",
+    correlationId: "correlationId from the incoming message",
+    workspaceId: "workspaceId of incoming message",
+    skillId: "skill.id of incoming message",
+    eventId: "eventId as passed into the skill via the Pub/Sub attributes",
 });
 
-// Send an audit message
-await logger.log("My audit log message");
+// Send an debug message
+logger.debug("My %s log message", "super");
 
-// Send a warning audit log message
-await logger.log("Some warning message", Severity.Warning);
+await logger.close();
 ```
 
 ## Contributing

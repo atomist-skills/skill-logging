@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { createLogger, Severity } from "../lib/logging";
+import { createLogger } from "../lib/logging";
 
 describe("test", () => {
 	it("should close without entries", async () => {
@@ -32,7 +32,8 @@ describe("test", () => {
 			correlationId: Date.now().toString(),
 		});
 		for (let i = 0; i < 100; i++) {
-			logger.log(i.toString(), Severity.Debug);
+			logger.debug("Test %d\n", i);
+			logger.warn("");
 		}
 		await logger.close();
 	}).timeout(100000000);

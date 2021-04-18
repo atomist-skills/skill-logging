@@ -14,38 +14,52 @@
  * limitations under the License.
  */
 
-import { Entry, Logging, Severity as GcpSeverity } from "@google-cloud/logging";
+import { Entry, Logging, Severity } from "@google-cloud/logging";
 import * as Queue from "better-queue";
+import * as util from "util";
 
 /**
- * Severity of User-facing skill logging
+ * Logging object suitable for submitting Skill logs.
  *
- * Note: This starts at Info level because everything below should
- * be considered debug output considered for the skill author only.
- */
-export enum Severity {
-	Debug = GcpSeverity.debug,
-	Info = GcpSeverity.info,
-	Warning = GcpSeverity.warning,
-	Error = GcpSeverity.error,
-}
-
-/**
- * Logging object suitable for submitting Skill audit logs
+ * This implementation logs to Google Cloud Logging and will fall back
+ * to console logging in environments where Google Cloud Logging is not
+ * available.
  */
 export interface Logger {
 	/**
-	 * Log a certain message or object to the skill audit log
-	 * @param msg simple string or array of strings to log
-	 * @param severity severity of skill audit message
-	 * @param labels additional labels to be added to the audit log
+	 * Log a message at debug level
+	 * @param msg the message to log
+	 * @param parameters additional optional parameters. Refer to util.format.
 	 */
-	log(
-		msg: string | string[],
-		severity?: Severity,
-		labels?: Record<string, any>,
-	): void;
+	debug(msg: string, ...parameters: any[]): void;
 
+	/**
+	 * Log a message at info level
+	 * @param msg the message to log
+	 * @param parameters additional optional parameters. Refer to util.format.
+	 */
+	info(msg: string, ...parameters: any[]): void;
+
+	/**
+	 * Log a message at warn level
+	 * @param msg the message to log
+	 * @param parameters additional optional parameters. Refer to util.format.
+	 */
+	warn(msg: string, ...parameters: any[]): void;
+
+	/**
+	 * Log a message at error level
+	 * @param msg the message to log
+	 * @param parameters additional optional parameters. Refer to util.format.
+	 */
+	error(msg: string, ...parameters: any[]): void;
+
+	/**
+	 * Close this Logger instance.
+	 *
+	 * Note: calling close is very important to avoid loosing log messages
+	 * that are queued from any of the log methods above and processed asynchronously.
+	 */
 	close(): Promise<void>;
 }
 
@@ -87,12 +101,12 @@ export function createLogger(
 	// eslint-disable-next-line @typescript-eslint/no-var-requires
 	const Store = require("better-queue-memory");
 	const logQueue = new Queue<
-		{ entries: Entry[]; messages: string[]; severity: Severity },
+		{ entry: Entry; message: string; severity: Severity },
 		Promise<void>
 	>({
 		store: new Store(),
 		process: async (
-			entry: { entries: Entry[]; messages: string[]; severity: Severity },
+			entry: { entry: Entry; message: string; severity: Severity },
 			cb,
 		) => {
 			const cl = (e: string[], prefix: string, cb: (msg) => void) => {
@@ -103,6 +117,10 @@ export function createLogger(
 				if (skipGl) {
 					fcb();
 				} else {
+					// Allow to write through to the console if requested
+					if (process.env.ATOMIST_CONSOLE_LOG) {
+						fcb();
+					}
 					try {
 						await cb();
 					} catch (e) {
@@ -119,28 +137,28 @@ export function createLogger(
 			};
 
 			switch (entry.severity) {
-				case Severity.Debug:
+				case Severity.debug:
 					await gl(
-						() => log.debug(entry.entries),
-						() => cl(entry.messages, "[debug]", console.debug),
+						() => log.debug([entry.entry]),
+						() => cl([entry.message], "[debug]", console.debug),
 					);
 					break;
-				case Severity.Info:
+				case Severity.info:
 					await gl(
-						() => log.info(entry.entries),
-						() => cl(entry.messages, " [info]", console.info),
+						() => log.info([entry.entry]),
+						() => cl([entry.message], " [info]", console.info),
 					);
 					break;
-				case Severity.Warning:
+				case Severity.warning:
 					await gl(
-						() => log.warning(entry.entries),
-						() => cl(entry.messages, " [warn]", console.warn),
+						() => log.warning([entry.entry]),
+						() => cl([entry.message], " [warn]", console.warn),
 					);
 					break;
-				case Severity.Error:
+				case Severity.error:
 					await gl(
-						() => log.error(entry.entries),
-						() => cl(entry.messages, "[error]", console.error),
+						() => log.error([entry.entry]),
+						() => cl([entry.message], "[error]", console.error),
 					);
 					break;
 			}
@@ -161,36 +179,51 @@ export function createLogger(
 		});
 	});
 
-	return {
-		log: (msg, severity: Severity = Severity.Info, labelss = {}) => {
-			started = true;
-			const metadata = {
-				labels: {
-					...labels,
-					...labelss,
-					event_id: context.eventId,
-					correlation_id: context.correlationId,
-					workspace_id: context.workspaceId,
-					skill_id: context.skillId,
-				},
-				resource: {
-					type: "global",
-				},
+	const queueLog = (
+		msg: string,
+		severity: Severity,
+		...parameters: any[]
+	) => {
+		started = true;
+		const metadata = {
+			labels: {
+				...labels,
+				event_id: context.eventId,
+				correlation_id: context.correlationId,
+				workspace_id: context.workspaceId,
+				skill_id: context.skillId,
+			},
+			resource: {
+				type: "global",
+			},
+		};
+
+		const formattedMsg = util.format(msg, ...parameters);
+		const entry = log.entry(metadata, formattedMsg);
+		if (!formattedMsg) {
+			entry.metadata = {
+				...entry.metadata,
+				...entry.data,
 			};
+			entry.data = formattedMsg;
+		}
 
-			const entries = [];
-			if (Array.isArray(msg)) {
-				entries.push(...msg.map(m => log.entry(metadata, m)));
-			} else {
-				entries.push(log.entry(metadata, msg));
-			}
+		logQueue.push({
+			entry,
+			severity,
+			message: formattedMsg,
+		});
+	};
 
-			logQueue.push({
-				entries,
-				severity,
-				messages: Array.isArray(msg) ? msg : [msg],
-			});
-		},
+	return {
+		debug: (msg: string, ...parameters) =>
+			queueLog(msg, Severity.debug, ...parameters),
+		info: (msg: string, ...parameters) =>
+			queueLog(msg, Severity.info, ...parameters),
+		warn: (msg: string, ...parameters) =>
+			queueLog(msg, Severity.warning, ...parameters),
+		error: (msg: string, ...parameters) =>
+			queueLog(msg, Severity.error, ...parameters),
 		close: async () => {
 			if (!started) {
 				return Promise.resolve();
