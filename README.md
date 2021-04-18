@@ -22,6 +22,7 @@ const logger = createLogger({
 // Send an debug message
 logger.debug("My %s log message", "super");
 
+// Close the logger instance to let it purge its internal queue
 await logger.close();
 ```
 
