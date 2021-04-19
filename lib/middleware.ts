@@ -19,7 +19,7 @@ import * as express from "express";
 function loggingMiddleware(): void {
 	console.log("Initialising logging middleware");
 
-	const { post: originalPost } = express.application;
+	const { post: originalPost, all: originalAll } = express.application;
 
 	const middleware = (req, res, next) => {
 		console.log("Inside middleware");
@@ -33,6 +33,11 @@ function loggingMiddleware(): void {
 		console.log("Inside post");
 		this.use(middleware);
 		return originalPost.bind(this)(path, ...rest);
+	};
+	express.application.all = function post(path, ...rest) {
+		console.log("Inside all");
+		this.use(middleware);
+		return originalAll.bind(this)(path, ...rest);
 	};
 }
 
