@@ -18,6 +18,8 @@ import { Entry, Logging, Severity } from "@google-cloud/logging";
 import * as Queue from "better-queue";
 import * as util from "util";
 
+import { clearTraceIds, getTraceIds } from "./middleware";
+
 /**
  * Logging object suitable for submitting Skill logs.
  *
@@ -185,6 +187,7 @@ export function createLogger(
 		...parameters: any[]
 	) => {
 		started = true;
+		const traceIds = getTraceIds();
 		const metadata = {
 			labels: {
 				...labels,
@@ -192,6 +195,8 @@ export function createLogger(
 				correlation_id: context.correlationId,
 				workspace_id: context.workspaceId,
 				skill_id: context.skillId,
+				execution_id: traceIds?.executionId,
+				trace_id: traceIds?.traceId,
 			},
 			resource: {
 				type: "global",
@@ -229,6 +234,7 @@ export function createLogger(
 				return Promise.resolve();
 			}
 			closing = true;
+			clearTraceIds();
 			return drained;
 		},
 	};
