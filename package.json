@@ -56,7 +56,8 @@
     "@google-cloud/logging": "^8.2.0",
     "@types/better-queue": "^3.8.2",
     "better-queue": "^3.8.10",
-    "better-queue-memory": "^1.0.4"
+    "better-queue-memory": "^1.0.4",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@atomist/npm-tools": "0.1.0-master.20200709090755",
