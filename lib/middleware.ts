@@ -14,31 +14,36 @@
  * limitations under the License.
  */
 
-import * as express from "express";
-
 function loggingMiddleware(): void {
 	console.log("Initialising logging middleware");
 
-	const { post: originalPost, all: originalAll } = express.application;
+	try {
+		// eslint-disable-next-line @typescript-eslint/no-var-requires
+		const express = require("express");
 
-	const middleware = (req, res, next) => {
-		console.log("Inside middleware");
-		const traceId = req.get("x-cloud-trace-context");
-		const executionId = req.get("function-execution-id");
-		setTraceIds(traceId, executionId);
-		next();
-	};
+		const { post: originalPost, all: originalAll } = express.application;
 
-	express.application.post = function post(path, ...rest) {
-		console.log("Inside post");
-		this.use(middleware);
-		return originalPost.bind(this)(path, ...rest);
-	};
-	express.application.all = function post(path, ...rest) {
-		console.log("Inside all");
-		this.use(middleware);
-		return originalAll.bind(this)(path, ...rest);
-	};
+		const middleware = (req, res, next) => {
+			console.log("Inside middleware");
+			const traceId = req.get("x-cloud-trace-context");
+			const executionId = req.get("function-execution-id");
+			setTraceIds(traceId, executionId);
+			next();
+		};
+
+		express.application.post = function post(path, ...rest) {
+			console.log("Inside post");
+			this.use(middleware);
+			return originalPost.bind(this)(path, ...rest);
+		};
+		express.application.all = function post(path, ...rest) {
+			console.log("Inside all");
+			this.use(middleware);
+			return originalAll.bind(this)(path, ...rest);
+		};
+	} catch (e) {
+		console.log(e.stack);
+	}
 }
 
 loggingMiddleware();
