@@ -15,8 +15,6 @@
  */
 
 function loggingMiddleware(): void {
-	console.log("Initialising logging middleware");
-
 	try {
 		let expressPackageName = "express";
 		const cache = require.cache;
@@ -35,7 +33,6 @@ function loggingMiddleware(): void {
 		const { post: originalPost, all: originalAll } = express.application;
 
 		const middleware = (req, res, next) => {
-			console.log("Inside middleware");
 			const traceId = req.get("x-cloud-trace-context");
 			const executionId = req.get("function-execution-id");
 			setTraceIds(traceId, executionId);
@@ -43,17 +40,15 @@ function loggingMiddleware(): void {
 		};
 
 		express.application.post = function post(path, ...rest) {
-			console.log("Inside post");
 			this.use(middleware);
 			return originalPost.bind(this)(path, ...rest);
 		};
 		express.application.all = function post(path, ...rest) {
-			console.log("Inside all");
 			this.use(middleware);
 			return originalAll.bind(this)(path, ...rest);
 		};
 	} catch (e) {
-		console.log(e.stack);
+		// Intentionally left empty
 	}
 }
 
@@ -62,7 +57,6 @@ loggingMiddleware();
 let traceIds;
 
 function setTraceIds(traceId: string, executionId: string): void {
-	console.log("setTraceIds %s %s", traceId, executionId);
 	traceIds = {
 		traceId,
 		executionId,
@@ -70,11 +64,9 @@ function setTraceIds(traceId: string, executionId: string): void {
 }
 
 export function clearTraceIds(): void {
-	console.log("clearTraceIds");
 	traceIds = undefined;
 }
 
 export function getTraceIds(): { traceId: string; executionId: string } {
-	console.log("getTraceIds %s", JSON.stringify(traceIds || {}));
 	return traceIds;
 }
