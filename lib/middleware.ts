@@ -17,13 +17,19 @@
 import * as express from "express";
 
 function loggingMiddleware(): void {
-	const app = express();
-	app.use((req, res, next) => {
+	const { post: originalPost } = express.application;
+
+	const middleware = (req, res, next) => {
 		const traceId = req.get("x-cloud-trace-context");
 		const executionId = req.get("function-execution-id");
 		setTraceIds(traceId, executionId);
 		next();
-	});
+	};
+
+	express.application.post = function post(path, ...rest) {
+		this.use(middleware);
+		return originalPost.bind(this)(path, ...rest);
+	};
 }
 
 loggingMiddleware();
