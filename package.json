@@ -53,6 +53,7 @@
     "typedoc": "npm run doc"
   },
   "dependencies": {
+    "@google-cloud/functions-framework": "^1.7.1",
     "@google-cloud/logging": "^8.2.0",
     "@types/better-queue": "^3.8.2",
     "@types/express": "^4.17.11",
