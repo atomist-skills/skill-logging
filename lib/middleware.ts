@@ -29,7 +29,7 @@ function loggingMiddleware(): void {
 		next();
 	};
 
-	express.application.post = (path, ...rest) => {
+	express.application.post = function post(path, ...rest) {
 		console.log("Inside post");
 		this.use(middleware);
 		return originalPost.bind(this)(path, ...rest);
