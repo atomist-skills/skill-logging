@@ -18,8 +18,19 @@ function loggingMiddleware(): void {
 	console.log("Initialising logging middleware");
 
 	try {
+		let expressPackageName = "express";
+		const cache = require.cache;
+
+		// Load the express dependency dynamically from where it originally was resolved
+		for (const name of Object.keys(cache)) {
+			if (name.endsWith("express/index.js")) {
+				expressPackageName = name;
+				break;
+			}
+		}
+
 		// eslint-disable-next-line @typescript-eslint/no-var-requires
-		const express = require("express");
+		const express = require(expressPackageName);
 
 		const { post: originalPost, all: originalAll } = express.application;
 
