@@ -1,6 +1,6 @@
 {
   "name": "@atomist/skill-logging",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Atomist Skill Logging API",
   "keywords": [
     "atomist",
