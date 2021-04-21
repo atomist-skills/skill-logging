@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Entry, Logging, Severity } from "@google-cloud/logging";
+import { Entry, Logging } from "@google-cloud/logging";
 import * as Queue from "better-queue";
 import * as os from "os";
 import * as util from "util";
@@ -103,19 +103,9 @@ export function createLogger(
 	let skipGl = false;
 	// eslint-disable-next-line @typescript-eslint/no-var-requires
 	const Store = require("better-queue-memory");
-	const logQueue = new Queue<
-		{ entry: Entry; message: string; severity: Severity },
-		Promise<void>
-	>({
+	const logQueue = new Queue<Entry, Promise<void>>({
 		store: new Store(),
-		process: async (
-			entry: { entry: Entry; message: string; severity: Severity },
-			cb,
-		) => {
-			const cl = (e: string[], prefix: string, cb: (msg) => void) => {
-				e.forEach(en => cb(`${prefix} ${en}`));
-			};
-
+		process: async (entries: Entry[], cb) => {
 			const gl = async (cb: () => Promise<any>, fcb: () => void) => {
 				if (skipGl) {
 					fcb();
@@ -139,36 +129,23 @@ export function createLogger(
 				}
 			};
 
-			switch (entry.severity) {
-				case Severity.debug:
-					await gl(
-						() => log.debug([entry.entry]),
-						() => cl([entry.message], "[debug]", console.debug),
+			await gl(
+				() => log.write(entries),
+				() => {
+					entries.forEach(e =>
+						console.log(
+							`${severityToPrefix(
+								e.metadata.severity.toString(),
+							)}${e.data}`,
+						),
 					);
-					break;
-				case Severity.info:
-					await gl(
-						() => log.info([entry.entry]),
-						() => cl([entry.message], " [info]", console.info),
-					);
-					break;
-				case Severity.warning:
-					await gl(
-						() => log.warning([entry.entry]),
-						() => cl([entry.message], " [warn]", console.warn),
-					);
-					break;
-				case Severity.error:
-					await gl(
-						() => log.error([entry.entry]),
-						() => cl([entry.message], "[error]", console.error),
-					);
-					break;
-			}
+				},
+			);
+
 			cb();
 		},
 		concurrent: 1,
-		batchSize: 1,
+		batchSize: 10,
 	});
 	logQueue.resume();
 
@@ -182,11 +159,7 @@ export function createLogger(
 		});
 	});
 
-	const queueLog = (
-		msg: string,
-		severity: Severity,
-		...parameters: any[]
-	) => {
+	const queueLog = (msg: string, severity: string, ...parameters: any[]) => {
 		started = true;
 		const traceIds = getTraceIds();
 		const metadata = {
@@ -203,6 +176,7 @@ export function createLogger(
 			resource: {
 				type: "global",
 			},
+			severity: severity.toUpperCase(),
 		};
 
 		const formattedMsg = util.format(msg, ...parameters);
@@ -215,30 +189,40 @@ export function createLogger(
 			entry.data = formattedMsg;
 		}
 
-		logQueue.push({
-			entry,
-			severity,
-			message: formattedMsg,
-		});
+		logQueue.push(entry);
 	};
 
 	return {
 		debug: (msg: string, ...parameters) =>
-			queueLog(msg, Severity.debug, ...parameters),
+			queueLog(msg, "DEBUG", ...parameters),
 		info: (msg: string, ...parameters) =>
-			queueLog(msg, Severity.info, ...parameters),
+			queueLog(msg, "INFO", ...parameters),
 		warn: (msg: string, ...parameters) =>
-			queueLog(msg, Severity.warning, ...parameters),
+			queueLog(msg, "WARNING", ...parameters),
 		error: (msg: string, ...parameters) =>
-			queueLog(msg, Severity.error, ...parameters),
+			queueLog(msg, "ERROR", ...parameters),
 		close: async () => {
 			if (!started) {
 				return Promise.resolve();
 			}
 			closing = true;
-			queueLog("Purged logging queue", Severity.debug);
+			queueLog("Purged logging queue", "DEBUG");
 			clearTraceIds();
 			return drained;
 		},
 	};
+}
+
+function severityToPrefix(severity: string): string {
+	switch (severity) {
+		case "DEBUG":
+			return "[debug] ";
+		case "INFO":
+			return " [info] ";
+		case "WARNING":
+			return " [warn] ";
+		case "ERROR":
+			return "[error] ";
+	}
+	return "";
 }
