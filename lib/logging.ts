@@ -16,6 +16,7 @@
 
 import { Entry, Logging, Severity } from "@google-cloud/logging";
 import * as Queue from "better-queue";
+import * as os from "os";
 import * as util from "util";
 
 import { clearTraceIds, getTraceIds } from "./middleware";
@@ -197,6 +198,7 @@ export function createLogger(
 				skill_id: context.skillId,
 				execution_id: traceIds?.executionId,
 				trace_id: traceIds?.traceId,
+				host: os.hostname(),
 			},
 			resource: {
 				type: "global",
