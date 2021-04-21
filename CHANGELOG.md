@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/skill-logging/compare/1.0.0...HEAD)
 
+### Fixed
+
+-   Enforce purging of logging queue. [c43e1fb](https://github.com/atomist-skills/skill-logging/commit/c43e1fb8d0a7c8f015de8f491d1013a4de237ac0)
+
 ## [1.0.0](https://github.com/atomist-skills/skill-logging/compare/0.2.6...1.0.0) - 2021-04-20
 
 ## [0.2.6](https://github.com/atomist-skills/skill-logging/compare/0.2.5...0.2.6) - 2020-10-12
