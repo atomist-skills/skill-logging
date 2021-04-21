@@ -234,6 +234,7 @@ export function createLogger(
 				return Promise.resolve();
 			}
 			closing = true;
+			queueLog("Purged logging queue", Severity.debug);
 			clearTraceIds();
 			return drained;
 		},
