@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/skill-logging/compare/1.0.1...HEAD)
 
+### Added
+
+-   Include hostname in labels. [e734d1a](https://github.com/atomist-skills/skill-logging/commit/e734d1aeec14d92e10e41b53dfb0a621a9f10e47)
+
 ## [1.0.1](https://github.com/atomist-skills/skill-logging/compare/1.0.0...1.0.1) - 2021-04-21
 
 ### Fixed
