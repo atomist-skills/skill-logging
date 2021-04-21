@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/skill-logging/compare/1.0.2...HEAD)
 
+### Changed
+
+-   Use batching for sending log entries. [7a85e83](https://github.com/atomist-skills/skill-logging/commit/7a85e83af8b0476da3c28ec58c873568ed42ae25)
+
 ## [1.0.2](https://github.com/atomist-skills/skill-logging/compare/1.0.1...1.0.2) - 2021-04-21
 
 ### Added
