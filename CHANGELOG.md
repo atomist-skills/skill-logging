@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/skill-logging/compare/1.0.3...HEAD)
 
+### Removed
+
+-   Remove closing debug statement. [7c32b99](https://github.com/atomist-skills/skill-logging/commit/7c32b99d58260f86b7f5ec2e2c7326639214df1b)
+
 ## [1.0.3](https://github.com/atomist-skills/skill-logging/compare/1.0.2...1.0.3) - 2021-04-21
 
 ### Changed
