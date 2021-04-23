@@ -129,10 +129,14 @@ export function createLogger(
 				}
 			};
 
+			const filteredEntries = entries.filter(
+				e => e.metadata.severity !== "EXIT",
+			);
+
 			await gl(
-				() => log.write(entries),
+				() => log.write(filteredEntries),
 				() => {
-					entries.forEach(e =>
+					filteredEntries.forEach(e =>
 						console.log(
 							`${severityToPrefix(
 								e.metadata.severity.toString(),
@@ -206,7 +210,7 @@ export function createLogger(
 				return Promise.resolve();
 			}
 			closing = true;
-			queueLog("Purged logging queue", "DEBUG");
+			queueLog("", "EXIT");
 			clearTraceIds();
 			return drained;
 		},
