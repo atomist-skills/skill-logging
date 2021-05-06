@@ -233,7 +233,7 @@ function severityToPrefix(severity: string): string {
 }
 
 function chunk(s: string, maxBytes = 256000): string[] {
-	if (!s) {
+	if (!s || Buffer.byteLength(s) <= maxBytes) {
 		return [s];
 	}
 	let buf = Buffer.from(s);
