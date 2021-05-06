@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/skill-logging/compare/1.0.5...HEAD)
 
+### Fixed
+
+-   Chunk only when required. [f6d9e8a](https://github.com/atomist-skills/skill-logging/commit/f6d9e8a3b99d7886f37159f2eeb47bc93285cd86)
+
 ## [1.0.5](https://github.com/atomist-skills/skill-logging/compare/1.0.4...1.0.5) - 2021-05-06
 
 ### Added
