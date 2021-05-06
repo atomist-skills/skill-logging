@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+import * as fs from "fs";
+import * as util from "util";
+
 import { createLogger } from "../lib/logging";
 
 describe("test", () => {
@@ -34,7 +37,20 @@ describe("test", () => {
 		for (let i = 0; i < 100; i++) {
 			logger.debug("Test %d\n", i);
 			logger.warn("");
+			logger.error(undefined);
 		}
 		await logger.close();
 	}).timeout(100000000);
+	it("should log large text", async () => {
+		const text = (
+			await util.promisify(fs.readFile)("test/world192.txt")
+		).toString();
+		const logger = createLogger({
+			skillId: Date.now().toString(),
+			workspaceId: "T095SFFBK",
+			correlationId: Date.now().toString(),
+		});
+		logger.debug(text);
+		await logger.close();
+	});
 });

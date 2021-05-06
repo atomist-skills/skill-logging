@@ -183,17 +183,18 @@ export function createLogger(
 			severity: severity.toUpperCase(),
 		};
 
-		const formattedMsg = util.format(msg, ...parameters);
-		const entry = log.entry(metadata, formattedMsg);
-		if (!formattedMsg) {
-			entry.metadata = {
-				...entry.metadata,
-				...entry.data,
-			};
-			entry.data = formattedMsg;
-		}
+		chunk(util.format(msg, ...parameters)).forEach(c => {
+			const entry = log.entry(metadata, c);
+			if (!c) {
+				entry.metadata = {
+					...entry.metadata,
+					...entry.data,
+				};
+				entry.data = c;
+			}
 
-		logQueue.push(entry);
+			logQueue.push(entry);
+		});
 	};
 
 	return {
@@ -229,4 +230,23 @@ function severityToPrefix(severity: string): string {
 			return "[error] ";
 	}
 	return "";
+}
+
+function chunk(s: string, maxBytes = 256000): string[] {
+	if (!s) {
+		return [s];
+	}
+	let buf = Buffer.from(s);
+	const result = [];
+	while (buf.length) {
+		let i = buf.lastIndexOf(32, maxBytes + 1);
+		// If no space found, try forward search
+		if (i < 0) i = buf.indexOf(32, maxBytes);
+		// If there's no space at all, take the whole string
+		if (i < 0) i = buf.length;
+		// This is a safe cut-off point; never half-way a multi-byte
+		result.push(buf.slice(0, i).toString());
+		buf = buf.slice(i + 1); // Skip space (if any)
+	}
+	return result;
 }
