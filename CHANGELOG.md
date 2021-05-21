@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/skill-logging/compare/1.0.7...HEAD)
 
+### Added
+
+-   Chunk large log messages at : too. [e86a552](https://github.com/atomist-skills/skill-logging/commit/e86a552e896412b3340d0260eca347daa5fc126f)
+
 ## [1.0.7](https://github.com/atomist-skills/skill-logging/compare/1.0.6...1.0.7) - 2021-05-18
 
 ### Changed
 
--   Fix audit findings. [8b21c88](https://github.com/atomist-skills/skill-logging/commit/8b21c88c2450d7af0edc0337b1765d28bb676ee3)
+*   Fix audit findings. [8b21c88](https://github.com/atomist-skills/skill-logging/commit/8b21c88c2450d7af0edc0337b1765d28bb676ee3)
 
 ## [1.0.6](https://github.com/atomist-skills/skill-logging/compare/1.0.5...1.0.6) - 2021-05-06
 
