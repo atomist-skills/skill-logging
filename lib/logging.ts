@@ -157,7 +157,12 @@ export function createLogger(
 	let started = false;
 	const drained = new Promise<void>(resolve => {
 		logQueue.on("drain", () => {
+			console.log("%sLog queue drained", severityToPrefix("DEBUG"));
 			if (closing) {
+				console.log(
+					"%sLog queue drained and closed",
+					severityToPrefix("DEBUG"),
+				);
 				resolve();
 			}
 		});
