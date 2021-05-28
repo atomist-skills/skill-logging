@@ -212,6 +212,7 @@ export function createLogger(
 		error: (msg: string, ...parameters) =>
 			queueLog(msg, "ERROR", ...parameters),
 		close: async () => {
+			console.log("%sClosing log queue", severityToPrefix("DEBUG"));
 			if (!started) {
 				return Promise.resolve();
 			}
