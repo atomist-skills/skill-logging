@@ -122,7 +122,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | Name                      | Version    | Publisher            | Repository                                                                                                         |
 | ------------------------- | ---------- | -------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `@tootallnate/once`       | `1.1.2`    | Nathan Rajlich       | [https://github.com/TooTallNate/once](https://github.com/TooTallNate/once)                                         |
-| `@types/better-queue`     | `3.8.2`    |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
+| `@types/better-queue`     | `3.8.3`    |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/color-name`       | `1.1.1`    |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/long`             | `4.0.1`    |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/node`             | `12.19.8`  |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
