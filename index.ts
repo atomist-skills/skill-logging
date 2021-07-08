@@ -15,3 +15,4 @@
  */
 
 export { createLogger, Logger } from "./lib/logging";
+export { initLoggingMiddleware } from "./lib/middleware";

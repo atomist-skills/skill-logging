@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+export const initLoggingMiddleware = loggingMiddleware;
+
 function loggingMiddleware(): void {
 	try {
 		let expressPackageName = "express";
@@ -21,7 +23,10 @@ function loggingMiddleware(): void {
 
 		// Load the express dependency dynamically from where it originally was resolved
 		for (const name of Object.keys(cache)) {
-			if (name.endsWith("express/index.js")) {
+			if (
+				name.endsWith("express/index.js") &&
+				!name.includes("@google-cloud/logging")
+			) {
 				expressPackageName = name;
 				break;
 			}
@@ -30,12 +35,19 @@ function loggingMiddleware(): void {
 		// eslint-disable-next-line @typescript-eslint/no-var-requires
 		const express = require(expressPackageName);
 
+		if (!express?.application) {
+			return;
+		}
+
 		const { post: originalPost, all: originalAll } = express.application;
 
 		const middleware = (req, res, next) => {
 			const traceId = req.get("x-cloud-trace-context");
 			const executionId = req.get("function-execution-id");
-			setTraceIds(traceId, executionId);
+			setTraceIds(
+				traceId,
+				executionId ? executionId.split("/")[0] : undefined,
+			);
 			next();
 		};
 
