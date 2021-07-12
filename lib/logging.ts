@@ -77,6 +77,7 @@ export function createLogger(
 		skillId: string;
 		correlationId: string;
 		workspaceId: string;
+		traceId?: string;
 	},
 	labels: Record<string, any> = {},
 	name = "skills_logging",
@@ -174,7 +175,7 @@ export function createLogger(
 				workspace_id: context.workspaceId,
 				skill_id: context.skillId,
 				execution_id: traceIds?.executionId,
-				trace_id: traceIds?.traceId,
+				trace_id: traceIds?.traceId || context.traceId,
 				host: os.hostname(),
 			},
 			resource: {
