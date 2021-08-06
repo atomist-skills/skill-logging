@@ -175,7 +175,7 @@ export function createLogger(
 				workspace_id: context.workspaceId,
 				skill_id: context.skillId,
 				execution_id: traceIds?.executionId,
-				trace_id: traceIds?.traceId || context.traceId,
+				trace_id: context.traceId || traceIds?.traceId,
 				host: os.hostname(),
 			},
 			resource: {
