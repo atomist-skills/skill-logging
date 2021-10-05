@@ -16,7 +16,7 @@ This page details all runtime dependencies of `@atomist/skill-logging`.
 | [CC0-1.0](#cc0-10)            | 1     |
 | [GPL-2.0](#gpl-20)            | 1     |
 | [ISC](#isc)                   | 16    |
-| [MIT](#mit)                   | 78    |
+| [MIT](#mit)                   | 81    |
 
 #### Apache-2.0
 
@@ -123,6 +123,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | ------------------------- | ---------- | -------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `@tootallnate/once`       | `1.1.2`    | Nathan Rajlich       | [https://github.com/TooTallNate/once](https://github.com/TooTallNate/once)                                         |
 | `@types/better-queue`     | `3.8.3`    |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
+| `@types/chunk-text`       | `1.0.0`    |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/color-name`       | `1.1.1`    |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/long`             | `4.0.1`    |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
 | `@types/node`             | `12.19.8`  |                      | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)           |
@@ -137,6 +138,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `better-queue`            | `3.8.10`   | Diamond Inc.         | [https://github.com/diamondio/better-queue](https://github.com/diamondio/better-queue)                             |
 | `bignumber.js`            | `9.0.1`    | Michael Mclaughlin   | [https://github.com/MikeMcl/bignumber.js](https://github.com/MikeMcl/bignumber.js)                                 |
 | `camelcase`               | `5.3.1`    | Sindre Sorhus        | [https://github.com/sindresorhus/camelcase](https://github.com/sindresorhus/camelcase)                             |
+| `chunk-text`              | `2.0.1`    | Raymond RUTJES       | [https://github.com/algolia/chunk-text](https://github.com/algolia/chunk-text)                                     |
 | `color-convert`           | `2.0.1`    | Heather Arthur       | [https://github.com/Qix-/color-convert](https://github.com/Qix-/color-convert)                                     |
 | `color-name`              | `1.1.4`    | DY                   | [https://github.com/colorjs/color-name](https://github.com/colorjs/color-name)                                     |
 | `d64`                     | `1.0.0`    | Dominic Tarr         | [https://github.com/dominictarr/d64](https://github.com/dominictarr/d64)                                           |
@@ -180,6 +182,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `readable-stream`         | `3.6.0`    |                      | [https://github.com/nodejs/readable-stream](https://github.com/nodejs/readable-stream)                             |
 | `require-directory`       | `2.1.1`    | Troy Goode           | [https://github.com/troygoode/node-require-directory](https://github.com/troygoode/node-require-directory)         |
 | `retry-request`           | `4.1.3`    | Stephen Sawchuk      | [https://github.com/stephenplusplus/retry-request](https://github.com/stephenplusplus/retry-request)               |
+| `runes`                   | `0.4.3`    | Vitaly Domnikov      | [https://github.com/dotcypress/runes](https://github.com/dotcypress/runes)                                         |
 | `safe-buffer`             | `5.1.2`    | Feross Aboukhadijeh  | [https://github.com/feross/safe-buffer](https://github.com/feross/safe-buffer)                                     |
 | `safe-buffer`             | `5.2.1`    | Feross Aboukhadijeh  | [https://github.com/feross/safe-buffer](https://github.com/feross/safe-buffer)                                     |
 | `snakecase-keys`          | `3.2.1`    | Ben Drucker          | [https://github.com/bendrucker/snakecase-keys](https://github.com/bendrucker/snakecase-keys)                       |
