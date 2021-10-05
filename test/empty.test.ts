@@ -15,9 +15,10 @@
  */
 
 import * as fs from "fs";
+import { fail } from "power-assert";
 import * as util from "util";
 
-import { createLogger } from "../lib/logging";
+import { chunk, createLogger } from "../lib/logging";
 
 describe("test", () => {
 	it("should close without entries", async () => {
@@ -41,16 +42,19 @@ describe("test", () => {
 		}
 		await logger.close();
 	}).timeout(100000000);
+
 	it("should log large text", async () => {
 		const text = (
 			await util.promisify(fs.readFile)("test/world192.txt")
 		).toString();
-		const logger = createLogger({
-			skillId: Date.now().toString(),
-			workspaceId: "T095SFFBK",
-			correlationId: Date.now().toString(),
-		});
-		logger.debug(text);
-		await logger.close();
+
+		const l = 256000;
+		const chunks = chunk(text, l);
+		for (const c of chunks) {
+			console.log(Buffer.byteLength(c));
+			if (Buffer.byteLength(c) > l) {
+				fail("too long");
+			}
+		}
 	});
 });

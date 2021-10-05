@@ -233,39 +233,12 @@ function severityToPrefix(severity: string): string {
 	return "";
 }
 
-function chunk(s: string, maxBytes = 256000): string[] {
+export function chunk(s: string, maxBytes = 256000): string[] {
 	if (!s || Buffer.byteLength(s) <= maxBytes) {
 		return [s];
 	}
-	let buf = Buffer.from(s);
-	const result = [];
-	while (buf.length) {
-		let i = lastIndexOf(buf, maxBytes + 1);
-		// If no space found, try forward search
-		if (i < 0) i = indexOf(buf, maxBytes);
-		// If there's no space at all, take the whole string
-		if (i < 0) i = buf.length;
-		// This is a safe cut-off point; never half-way a multi-byte
-		result.push(buf.slice(0, i).toString());
-		buf = buf.slice(i + 1); // Skip space (if any)
-	}
-	return result;
-}
 
-function lastIndexOf(s: Buffer, maxBytes: number): number {
-	const ix32 = s.lastIndexOf(32, maxBytes);
-	const ix58 = s.lastIndexOf(58, maxBytes);
-	if (ix32 > ix58) {
-		return ix32;
-	}
-	return ix58;
-}
-
-function indexOf(s: Buffer, maxBytes: number): number {
-	const ix32 = s.indexOf(32, maxBytes);
-	const ix58 = s.indexOf(58, maxBytes);
-	if (ix32 < ix58) {
-		return ix32;
-	}
-	return ix58;
+	// eslint-disable-next-line @typescript-eslint/no-var-requires
+	const chunk = require("chunk-text");
+	return chunk(s, maxBytes, { charLengthMask: 0 });
 }
