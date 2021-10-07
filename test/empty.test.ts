@@ -56,5 +56,5 @@ describe("test", () => {
 				fail("too long");
 			}
 		}
-	});
+	}).timeout(100000000);
 });
