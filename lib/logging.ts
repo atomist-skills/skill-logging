@@ -16,6 +16,7 @@
 
 import { Entry, Logging } from "@google-cloud/logging";
 import * as Queue from "better-queue";
+import * as metadata from "gcp-metadata";
 import * as os from "os";
 import * as util from "util";
 
@@ -130,9 +131,12 @@ export function createLogger(
 				}
 			};
 
+			const id = await instanceId();
+
 			const filteredEntries = entries.filter(
 				e => e.metadata.severity !== "EXIT",
 			);
+			filteredEntries.forEach(e => (e.metadata.labels.instance_id = id));
 
 			await gl(
 				() => log.write(filteredEntries),
@@ -176,7 +180,7 @@ export function createLogger(
 				skill_id: context.skillId,
 				execution_id: traceIds?.executionId,
 				trace_id: context.traceId || traceIds?.traceId,
-				host: os.hostname(),
+				host: os.hostname() === "localhost" ? undefined : os.hostname(),
 			},
 			resource: {
 				type: "global",
@@ -241,4 +245,16 @@ export function chunk(s: string, maxBytes = 256000): string[] {
 	// eslint-disable-next-line @typescript-eslint/no-var-requires
 	const chunk = require("chunk-text");
 	return chunk(s, maxBytes, { charLengthMask: 0 });
+}
+
+let InstanceId;
+export async function instanceId(): Promise<string> {
+	if (!InstanceId) {
+		try {
+			InstanceId = await metadata.instance("id");
+		} catch (e) {
+			InstanceId = "<invalid>";
+		}
+	}
+	return InstanceId !== "<invalid>" ? InstanceId : undefined;
 }

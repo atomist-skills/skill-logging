@@ -58,7 +58,8 @@
     "@types/chunk-text": "^1.0.0",
     "better-queue": "^3.8.10",
     "better-queue-memory": "^1.0.4",
-    "chunk-text": "^2.0.1"
+    "chunk-text": "^2.0.1",
+    "gcp-metadata": "^4.3.1"
   },
   "devDependencies": {
     "@atomist/npm-tools": "0.1.0-master.20200709090755",
