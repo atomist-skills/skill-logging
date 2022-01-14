@@ -186,6 +186,7 @@ export function createLogger(
 				type: "global",
 			},
 			severity: severity.toUpperCase(),
+			timestamp: new Date(),
 		};
 
 		chunk(util.format(msg, ...parameters)).forEach(c => {
