@@ -44,10 +44,7 @@ function loggingMiddleware(): void {
 		const middleware = (req, res, next) => {
 			const traceId = req.get("x-cloud-trace-context");
 			const executionId = req.get("function-execution-id");
-			setTraceIds(
-				traceId ? traceId.split("/")[0] : undefined,
-				executionId,
-			);
+			setTraceIds(traceId, executionId);
 			next();
 		};
 

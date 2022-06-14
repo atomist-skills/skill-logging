@@ -171,6 +171,7 @@ export function createLogger(
 	const queueLog = (msg: string, severity: string, ...parameters: any[]) => {
 		started = true;
 		const traceIds = getTraceIds();
+		const traceId = context.traceId || traceIds?.traceId;
 		const metadata = {
 			labels: {
 				...labels,
@@ -179,7 +180,7 @@ export function createLogger(
 				workspace_id: context.workspaceId,
 				skill_id: context.skillId,
 				execution_id: traceIds?.executionId,
-				trace_id: context.traceId || traceIds?.traceId,
+				trace_id: traceId ? traceId.split("/")[0] : undefined,
 				host: os.hostname() === "localhost" ? undefined : os.hostname(),
 			},
 			resource: {
